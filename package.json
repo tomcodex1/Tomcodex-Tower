@@ -1,0 +1,23 @@
+{
+  "name": "tomcodex-dashboard-sync",
+  "version": "1.0.0",
+  "description": "TomCodeX Dashboard — Hybrid sync server for local-to-online data pushing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npx nodemon server.js",
+    "push": "node push-local.js",
+    "push:watch": "node push-local.js --watch",
+    "push:watch:10": "node push-local.js --watch --interval 10"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

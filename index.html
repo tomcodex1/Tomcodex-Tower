@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TomCodeX Inc — Dashboard Hub</title>
+<link rel="icon" type="image/png" href="assets/tcxrclogo.png" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0e1a;
+    color: #e0e6f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .container {
+    max-width: 800px;
+    width: 100%;
+  }
+  .logo {
+    font-size: 2.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: shimmer 4s linear infinite;
+    text-align: center;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .logo img {
+    height: 42px;
+    width: auto;
+    border-radius: 8px;
+    filter: drop-shadow(0 0 8px rgba(10,107,255,0.5));
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  .subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 1rem;
+    margin-bottom: 48px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .card {
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 18px;
+    padding: 32px 28px;
+    background: rgba(255,255,255,0.02);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 18px 18px 0 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .card:hover::before { opacity: 1; }
+  .card:hover {
+    border-color: rgba(255,255,255,0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .card-arch::before { background: linear-gradient(90deg, #60a5fa, #a78bfa); }
+  .card-dev::before { background: linear-gradient(90deg, #4ade80, #22d3ee); }
+  .card-icon {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .card-desc {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.04);
+    color: #94a3b8;
+    font-weight: 500;
+  }
+  .footer {
+    margin-top: 48px;
+    text-align: center;
+    color: #475569;
+    font-size: 0.72rem;
+  }
+  @media (max-width: 600px) {
+    .cards { grid-template-columns: 1fr; }
+    .logo { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo"><img src="assets/tcxrclogo.png" alt="TomCodeX" />TomCodeX Inc</div>
+  <div class="subtitle">Dashboard Hub — Pick a view</div>
+  <div id="sync-status" style="text-align:center;font-size:0.7rem;color:#475569;margin-bottom:24px;">
+    <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#22d3ee;margin-right:6px;vertical-align:middle;animation:pulse 2s infinite;"></span>
+    Auto-sync enabled · Data refreshes every 30s
+  </div>
+  <style>@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}</style>
+
+  <div class="cards">
+    <a href="architecture-map.html" class="card card-arch">
+      <div class="card-icon">🗺️</div>
+      <div class="card-title">Architecture Map</div>
+      <div class="card-desc">Full system architecture with animated layer diagrams, UML class diagrams, data flow visualizations, and ER diagrams.</div>
+      <div class="card-tags">
+        <span class="tag">7 Layers</span>
+        <span class="tag">UML Diagrams</span>
+        <span class="tag">Data Flows</span>
+        <span class="tag">Animated</span>
+      </div>
+    </a>
+    <a href="dev-dashboard.html" class="card card-dev">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Developer Dashboard</div>
+      <div class="card-desc">Real-time system status, key metrics, deployment timeline, codebase stats, and activity feed for all services.</div>
+      <div class="card-tags">
+        <span class="tag">System Status</span>
+        <span class="tag">Metrics</span>
+        <span class="tag">Deployments</span>
+        <span class="tag">Activity</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="footer">
+  <div style="margin-bottom:8px;">
+    <a href="https://github.com/vcr50/salesforce-ops-monitoring-platform" target="_blank" style="color:#60a5fa;text-decoration:none;font-weight:600;">
+      🔗 GitHub Repository
+    </a>
+  </div>
+  TomCodeX Inc · SentinelFlow · Zentom AI · Zentom Suite
+</div>
+</div>
+</body>
+</html>

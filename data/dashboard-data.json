@@ -1,0 +1,132 @@
+{
+  "lastUpdated": "2025-01-20T12:00:00Z",
+  "refreshInterval": 30000,
+
+  "systemStatus": [
+    {"name": "Salesforce", "status": "online", "detail": "API 57.0 · 99.9% uptime"},
+    {"name": "Node.js API", "status": "online", "detail": "Express v4 · Port 3000"},
+    {"name": "Zentom AI", "status": "online", "detail": "FastAPI · Port 8000"},
+    {"name": "Marketing Site", "status": "online", "detail": "Vercel · Edge CDN"},
+    {"name": "TomCodeX Site", "status": "online", "detail": "Vercel · Edge CDN"},
+    {"name": "V2 Microservices", "status": "building", "detail": "Docker · In Dev"},
+    {"name": "PostgreSQL", "status": "online", "detail": "pgvector · Port 5432"},
+    {"name": "Redis", "status": "warning", "detail": "Celery Broker · 87% mem"}
+  ],
+
+  "keyMetrics": [
+    {"label": "Apex Classes", "value": 279, "color": "var(--accent-purple)", "change": "+12 this month", "changeType": "up"},
+    {"label": "Custom Objects", "value": 26, "color": "var(--accent-blue)", "change": "Stable", "changeType": "neutral"},
+    {"label": "LWC Components", "value": 32, "color": "var(--accent-cyan)", "change": "+5 this month", "changeType": "up"},
+    {"label": "API Endpoints", "value": 48, "color": "var(--accent-green)", "change": "+8 this month", "changeType": "up"},
+    {"label": "AI Models", "value": 6, "color": "var(--accent-orange)", "change": "+2 this month", "changeType": "up"},
+    {"label": "Open Issues", "value": 14, "color": "var(--accent-red)", "change": "-3 this week", "changeType": "down"}
+  ],
+
+  "apiRequestVolume": {
+    "peak": "12.4K req/hr",
+    "trend": "↑ 18% vs last week",
+    "trendType": "up",
+    "dataPoints": [45, 38, 40, 32, 28, 35, 22, 18, 25, 15, 20, 12, 18, 10, 14]
+  },
+
+  "codebaseBreakdown": [
+    {"name": "Apex", "pct": 38, "gradient": "linear-gradient(90deg,#8b5cf6,#a78bfa)", "labelColor": "#c4b5fd"},
+    {"name": "JavaScript", "pct": 24, "gradient": "linear-gradient(90deg,#22c55e,#4ade80)", "labelColor": "#86efac"},
+    {"name": "Python", "pct": 18, "gradient": "linear-gradient(90deg,#f97316,#fb923c)", "labelColor": "#fdba74"},
+    {"name": "TypeScript", "pct": 10, "gradient": "linear-gradient(90deg,#3b82f6,#60a5fa)", "labelColor": "#93bbfd"},
+    {"name": "HTML/CSS", "pct": 7, "gradient": "linear-gradient(90deg,#eab308,#facc15)", "labelColor": "#fde047"},
+    {"name": "Other", "pct": 3, "gradient": "linear-gradient(90deg,#06b6d4,#22d3ee)", "labelColor": "#67e8f9"}
+  ],
+
+  "codebaseStats": {
+    "files": 142,
+    "lines": "48.2K",
+    "commits": 847
+  },
+
+  "environments": [
+    {"name": "Production", "cls": "env-prod"},
+    {"name": "Staging", "cls": "env-staging"},
+    {"name": "Development", "cls": "env-dev"},
+    {"name": "Local", "cls": "env-local"}
+  ],
+
+  "deployTargets": [
+    "Vercel (2 projects)",
+    "Heroku (Node.js)",
+    "Render (AI Engine)",
+    "SFDX (Salesforce)",
+    "Docker (Local)"
+  ],
+
+  "aiModels": [
+    {"name": "DeepSeek Chat", "detail": "Primary · 1.3B params", "status": "Active", "statusColor": "var(--accent-green)", "dotColor": "var(--accent-green)", "animated": true, "delay": "0s"},
+    {"name": "Groq Llama3", "detail": "Fast inference · 70B", "status": "Active", "statusColor": "var(--accent-green)", "dotColor": "var(--accent-green)", "animated": true, "delay": "0.5s"},
+    {"name": "Ollama (Local)", "detail": "Offline · llama3.2", "status": "Standby", "statusColor": "var(--accent-yellow)", "dotColor": "var(--accent-yellow)", "animated": false, "delay": "0s"},
+    {"name": "Embedding Model", "detail": "pgvector · all-MiniLM-L6", "status": "Active", "statusColor": "var(--accent-green)", "dotColor": "var(--accent-green)", "animated": true, "delay": "1s"}
+  ],
+
+  "recentDeployments": [
+    {"time": "2m ago", "msg": "✅ Salesforce metadata deployed", "detail": "279 Apex classes, 32 LWC, 7 triggers · SFDX push", "type": "success"},
+    {"time": "18m ago", "msg": "✅ Marketing site updated", "detail": "Vercel auto-deploy from main · Build 3.2s", "type": "success"},
+    {"time": "1h ago", "msg": "🔄 Zentom AI engine restarted", "detail": "New DeepSeek config · FastAPI reload", "type": "info"},
+    {"time": "3h ago", "msg": "⚠️ Redis memory warning", "detail": "Celery broker at 87% memory · Consider scaling", "type": "warning"},
+    {"time": "5h ago", "msg": "✅ Node.js API v2.4.1 deployed", "detail": "Billing webhooks fix · Heroku release", "type": "success"},
+    {"time": "8h ago", "msg": "❌ Docker build failed (zentom-policy-engine)", "detail": "Dependency conflict · Resolved in commit a3f2d1", "type": "error"}
+  ],
+
+  "activityFeed": [
+    {"icon": "⚙️", "iconBg": "rgba(139,92,246,0.15)", "iconColor": "#c4b5fd", "service": "Apex", "text": "New IncidentController methods added", "time": "5m ago"},
+    {"icon": "🖥️", "iconBg": "rgba(34,197,94,0.15)", "iconColor": "#86efac", "service": "Node.js", "text": "Stripe webhook handler updated", "time": "12m ago"},
+    {"icon": "🧠", "iconBg": "rgba(249,115,22,0.15)", "iconColor": "#fdba74", "service": "Zentom AI", "text": "Memory engine context window expanded", "time": "25m ago"},
+    {"icon": "🌐", "iconBg": "rgba(96,165,250,0.15)", "iconColor": "#93bbfd", "service": "Website", "text": "Pricing page updated for Q2", "time": "1h ago"},
+    {"icon": "☁️", "iconBg": "rgba(236,72,153,0.15)", "iconColor": "#f9a8d4", "service": "Salesforce", "text": "Permission sets patched for FLS", "time": "2h ago"},
+    {"icon": "🐳", "iconBg": "rgba(6,182,212,0.15)", "iconColor": "#67e8f9", "service": "Docker", "text": "zentom-api image rebuilt", "time": "3h ago"},
+    {"icon": "📦", "iconBg": "rgba(234,179,8,0.15)", "iconColor": "#fde047", "service": "Packages", "text": "shared-types v2.1.0 published", "time": "4h ago"},
+    {"icon": "🔒", "iconBg": "rgba(248,113,113,0.15)", "iconColor": "#f87171", "service": "Security", "text": "API rate limiting tightened", "time": "6h ago"}
+  ],
+
+  "incidents": [
+    {"id": "INC-0041", "desc": "API Gateway timeout — Payment Service", "sev": "Critical", "status": "Open", "integration": "Payment API", "env": "Production", "affected": 1240, "sla": "Breached", "time": "4m ago", "rootCause": "Connection pool exhausted due to spike in transaction volume", "action": "Restart Service", "confidence": 92, "impact": "High"},
+    {"id": "INC-0040", "desc": "Salesforce Apex CPU limit breach", "sev": "Critical", "status": "Investigating", "integration": "SF Core", "env": "Production", "affected": 580, "sla": "At Risk", "time": "11m ago", "rootCause": "Recursive trigger loop detected on Opportunity object", "action": "Escalate", "confidence": 87, "impact": "High"},
+    {"id": "INC-0039", "desc": "Order Management sync failure", "sev": "High", "status": "Healing", "integration": "ERP Sync", "env": "Production", "affected": 310, "sla": "OK", "time": "18m ago", "rootCause": "Schema mismatch in v2.1 payload", "action": "Retry", "confidence": 95, "impact": "Medium"},
+    {"id": "INC-0038", "desc": "Email delivery latency > 8s", "sev": "Medium", "status": "Open", "integration": "SMTP Gateway", "env": "Staging", "affected": 90, "sla": "OK", "time": "32m ago", "rootCause": "MX record propagation delay", "action": "Retry", "confidence": 78, "impact": "Low"},
+    {"id": "INC-0037", "desc": "CRM data import partial failure", "sev": "High", "status": "Open", "integration": "Data Loader", "env": "Production", "affected": 430, "sla": "At Risk", "time": "45m ago", "rootCause": "Malformed CSV — 34 rows failed validation", "action": "Escalate", "confidence": 91, "impact": "Medium"},
+    {"id": "INC-0036", "desc": "Webhook signature verification fail", "sev": "Medium", "status": "Investigating", "integration": "Stripe Webhook", "env": "Production", "affected": 55, "sla": "OK", "time": "1h ago", "rootCause": "Secret key rotation not propagated", "action": "Restart Service", "confidence": 83, "impact": "Low"},
+    {"id": "INC-0035", "desc": "Dashboard report timeout", "sev": "Low", "status": "Resolved", "integration": "Reports API", "env": "Sandbox", "affected": 12, "sla": "OK", "time": "2h ago", "rootCause": "Missing index on Incident__c.CreatedDate", "action": "Retry", "confidence": 98, "impact": "Low"}
+  ],
+
+  "integrations": [
+    {"name": "Payment API", "status": "Failed", "resp": "8,420ms", "uptime": "94.2%", "lastOk": "4m ago", "errors": 14, "color": "#ef4444"},
+    {"name": "Salesforce Core", "status": "Warning", "resp": "1,230ms", "uptime": "98.1%", "lastOk": "2m ago", "errors": 3, "color": "#f59e0b"},
+    {"name": "ERP Sync", "status": "Warning", "resp": "2,800ms", "uptime": "97.4%", "lastOk": "18m ago", "errors": 7, "color": "#f59e0b"},
+    {"name": "SMTP Gateway", "status": "Warning", "resp": "4,100ms", "uptime": "99.0%", "lastOk": "1m ago", "errors": 2, "color": "#f59e0b"},
+    {"name": "Stripe Webhook", "status": "OK", "resp": "210ms", "uptime": "99.9%", "lastOk": "0s ago", "errors": 0, "color": "#10b981"},
+    {"name": "Data Loader", "status": "OK", "resp": "540ms", "uptime": "99.5%", "lastOk": "1m ago", "errors": 0, "color": "#10b981"},
+    {"name": "Reports API", "status": "OK", "resp": "320ms", "uptime": "99.8%", "lastOk": "0s ago", "errors": 0, "color": "#10b981"},
+    {"name": "Agentforce AI", "status": "OK", "resp": "180ms", "uptime": "100%", "lastOk": "0s ago", "errors": 0, "color": "#10b981"},
+    {"name": "Platform Events", "status": "OK", "resp": "90ms", "uptime": "100%", "lastOk": "0s ago", "errors": 0, "color": "#10b981"}
+  ],
+
+  "logs": [
+    {"api": "Payment API", "status": "Failed", "resp": "8420ms", "error": "Connection pool exhausted", "ts": "04:12:33"},
+    {"api": "ERP Sync", "status": "Failed", "resp": "2800ms", "error": "Schema mismatch v2.1", "ts": "03:58:10"},
+    {"api": "SMTP Gateway", "status": "Warning", "resp": "4100ms", "error": "Latency threshold exceeded", "ts": "03:44:22"},
+    {"api": "Salesforce Core", "status": "Warning", "resp": "1230ms", "error": "CPU limit 85% utilization", "ts": "03:41:05"},
+    {"api": "Stripe Webhook", "status": "Success", "resp": "210ms", "error": "—", "ts": "03:38:44"},
+    {"api": "Reports API", "status": "Success", "resp": "320ms", "error": "—", "ts": "03:35:18"}
+  ],
+
+  "aiInsights": [
+    {"id": "INC-0041", "title": "Payment API — Connection Pool Exhaustion", "cause": "Traffic spike caused all 100 connections to be consumed.", "action": "Restart Service", "confidence": 92, "actionType": "restart"},
+    {"id": "INC-0040", "title": "Apex CPU Limit — Recursive Trigger Loop", "cause": "Trigger on Opportunity fires before_update and calls a Flow that re-saves the record.", "action": "Escalate to Dev Team", "confidence": 87, "actionType": "escalate"},
+    {"id": "INC-0039", "title": "ERP Sync — Schema Field Missing", "cause": "v2.1 payload schema removed Order_Priority__c.", "action": "Retry with v2.0 Schema", "confidence": 95, "actionType": "retry"}
+  ],
+
+  "impactData": [
+    {"id": "INC-0041", "title": "Payment API Outage", "users": 1240, "arpu": 42, "type": "Payment Integration", "risk": "Critical"},
+    {"id": "INC-0040", "title": "Apex CPU Breach", "users": 580, "arpu": 38, "type": "Platform Health", "risk": "High"},
+    {"id": "INC-0039", "title": "ERP Sync Failure", "users": 310, "arpu": 25, "type": "Data Integration", "risk": "Medium"},
+    {"id": "INC-0037", "title": "CRM Import Failure", "users": 430, "arpu": 30, "type": "Data Import", "risk": "High"}
+  ]
+}
