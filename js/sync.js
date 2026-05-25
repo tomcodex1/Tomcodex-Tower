@@ -66,22 +66,22 @@
       {"name":"Embedding Model","detail":"pgvector · all-MiniLM-L6","status":"Active","statusColor":"var(--accent-green)","dotColor":"var(--accent-green)","animated":true,"delay":"1s"}
     ],
     recentDeployments: [
-      {"time":"2m ago","msg":"✅ Salesforce metadata deployed","detail":"279 Apex classes, 32 LWC, 7 triggers · SFDX push","type":"success"},
-      {"time":"18m ago","msg":"✅ Marketing site updated","detail":"Vercel auto-deploy from main · Build 3.2s","type":"success"},
-      {"time":"1h ago","msg":"🔄 Zentom AI engine restarted","detail":"New DeepSeek config · FastAPI reload","type":"info"},
-      {"time":"3h ago","msg":"⚠️ Redis memory warning","detail":"Celery broker at 87% memory · Consider scaling","type":"warning"},
-      {"time":"5h ago","msg":"✅ Node.js API v2.4.1 deployed","detail":"Billing webhooks fix · Heroku release","type":"success"},
-      {"time":"8h ago","msg":"❌ Docker build failed (zentom-policy-engine)","detail":"Dependency conflict · Resolved in commit a3f2d1","type":"error"}
+      {"time":"2m ago","msg":"Salesforce metadata deployed","detail":"279 Apex classes, 32 LWC, 7 triggers · SFDX push","type":"success"},
+      {"time":"18m ago","msg":"Marketing site updated","detail":"Vercel auto-deploy from main · Build 3.2s","type":"success"},
+      {"time":"1h ago","msg":"Zentom AI engine restarted","detail":"New DeepSeek config · FastAPI reload","type":"info"},
+      {"time":"3h ago","msg":"Redis memory warning","detail":"Celery broker at 87% memory · Consider scaling","type":"warning"},
+      {"time":"5h ago","msg":"Node.js API v2.4.1 deployed","detail":"Billing webhooks fix · Heroku release","type":"success"},
+      {"time":"8h ago","msg":"Docker build failed (zentom-policy-engine)","detail":"Dependency conflict · Resolved in commit a3f2d1","type":"error"}
     ],
     activityFeed: [
-      {"icon":"⚙️","iconBg":"rgba(139,92,246,0.15)","iconColor":"#c4b5fd","service":"Apex","text":"New IncidentController methods added","time":"5m ago"},
-      {"icon":"🖥️","iconBg":"rgba(34,197,94,0.15)","iconColor":"#86efac","service":"Node.js","text":"Stripe webhook handler updated","time":"12m ago"},
-      {"icon":"🧠","iconBg":"rgba(249,115,22,0.15)","iconColor":"#fdba74","service":"Zentom AI","text":"Memory engine context window expanded","time":"25m ago"},
-      {"icon":"🌐","iconBg":"rgba(96,165,250,0.15)","iconColor":"#93bbfd","service":"Website","text":"Pricing page updated for Q2","time":"1h ago"},
-      {"icon":"☁️","iconBg":"rgba(236,72,153,0.15)","iconColor":"#f9a8d4","service":"Salesforce","text":"Permission sets patched for FLS","time":"2h ago"},
-      {"icon":"🐳","iconBg":"rgba(6,182,212,0.15)","iconColor":"#67e8f9","service":"Docker","text":"zentom-api image rebuilt","time":"3h ago"},
-      {"icon":"📦","iconBg":"rgba(234,179,8,0.15)","iconColor":"#fde047","service":"Packages","text":"shared-types v2.1.0 published","time":"4h ago"},
-      {"icon":"🔒","iconBg":"rgba(248,113,113,0.15)","iconColor":"#f87171","service":"Security","text":"API rate limiting tightened","time":"6h ago"}
+      {"icon":"gear","iconBg":"rgba(139,92,246,0.15)","iconColor":"#c4b5fd","service":"Apex","text":"New IncidentController methods added","time":"5m ago"},
+      {"icon":"server","iconBg":"rgba(34,197,94,0.15)","iconColor":"#86efac","service":"Node.js","text":"Stripe webhook handler updated","time":"12m ago"},
+      {"icon":"ai","iconBg":"rgba(249,115,22,0.15)","iconColor":"#fdba74","service":"Zentom AI","text":"Memory engine context window expanded","time":"25m ago"},
+      {"icon":"web","iconBg":"rgba(96,165,250,0.15)","iconColor":"#93bbfd","service":"Website","text":"Pricing page updated for Q2","time":"1h ago"},
+      {"icon":"cloud","iconBg":"rgba(236,72,153,0.15)","iconColor":"#f9a8d4","service":"Salesforce","text":"Permission sets patched for FLS","time":"2h ago"},
+      {"icon":"container","iconBg":"rgba(6,182,212,0.15)","iconColor":"#67e8f9","service":"Docker","text":"zentom-api image rebuilt","time":"3h ago"},
+      {"icon":"package","iconBg":"rgba(234,179,8,0.15)","iconColor":"#fde047","service":"Packages","text":"shared-types v2.1.0 published","time":"4h ago"},
+      {"icon":"security","iconBg":"rgba(248,113,113,0.15)","iconColor":"#f87171","service":"Security","text":"API rate limiting tightened","time":"6h ago"}
     ],
     incidents: [],
     integrations: [],
@@ -118,12 +118,12 @@
       if (label) label.textContent = "Syncing…";
     } else if (status === "ok") {
       dot.style.background = "var(--accent-green)";
-      const src = dataSource === "api" ? "☁️ Live" : dataSource === "local" ? "📁 Local" : "💾 Cached";
+      const src = dataSource === "api" ? "Live" : dataSource === "local" ? "Local" : "Cached";
       if (label) label.textContent = src + " · " + new Date().toLocaleTimeString();
     } else if (status === "error") {
       if (isFileProtocol) {
         dot.style.background = "var(--accent-cyan)";
-        if (label) label.textContent = "💾 Offline · Open via server for live sync";
+        if (label) label.textContent = "Offline · Open via server for live sync";
       } else {
         dot.style.background = "var(--accent-red)";
         if (label) label.textContent = "Sync failed";
@@ -148,7 +148,7 @@
         if (apiRes.ok) {
           data = await apiRes.json();
           dataSource = data._meta?.source === "live" ? "api" : "local";
-          console.log("[sync] ✅ Data from API (" + dataSource + ")");
+          console.log("[sync] Data from API (" + dataSource + ")");
         }
       } catch (e) {
         console.log("[sync] API not available, trying local file...");
@@ -161,7 +161,7 @@
           if (localRes.ok) {
             data = await localRes.json();
             dataSource = "local";
-            console.log("[sync] ✅ Data from local file");
+            console.log("[sync] Data from local file");
           }
         } catch (e) {
           console.log("[sync] Local file not available, using embedded fallback");
@@ -330,9 +330,9 @@
     if (stats && Store.codebaseStats) {
       const s = Store.codebaseStats;
       stats.innerHTML = `
-        <span>📁 <strong style="color:var(--text);">${s.files}</strong> files</span>
-        <span>📝 <strong style="color:var(--text);">${s.lines}</strong> lines</span>
-        <span>🔄 <strong style="color:var(--text);">${s.commits}</strong> commits</span>`;
+        <span><strong style="color:var(--text);">${s.files}</strong> files</span>
+        <span><strong style="color:var(--text);">${s.lines}</strong> lines</span>
+        <span><strong style="color:var(--text);">${s.commits}</strong> commits</span>`;
     }
   }
 

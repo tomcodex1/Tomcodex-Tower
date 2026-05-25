@@ -1,5 +1,5 @@
 
-# 📊 TomCodeX Inc — Dashboard
+# TomCodeX Inc — Dashboard
 
 Interactive dashboards for visualizing the TomCodeX Inc architecture, systems, and development metrics.
 
@@ -17,20 +17,20 @@ Simply open any `.html` file in your browser — no server required. All assets 
 ## Features
 
 ### Architecture Map
-- 🏗️ 7-layer architecture visualization (Presentation → Infrastructure)
-- 📐 UML Diagrams tab with Class, Sequence, Component & ER diagrams
-- 🔄 Animated data flow diagrams with flowing particles
-- 🚨 Incident lifecycle visualization
-- 💳 Billing & subscription flow
-- 🐳 Microservices v2 architecture
+- 7-layer architecture visualization (Presentation → Infrastructure)
+- UML Diagrams tab with Class, Sequence, Component & ER diagrams
+- Animated data flow diagrams with flowing particles
+- Incident lifecycle visualization
+- Billing & subscription flow
+- Microservices v2 architecture
 
 ### Developer Dashboard
-- 🟢 Real-time system status for 8 services
-- 📈 Key metrics with trend indicators
-- 📊 Codebase language breakdown
-- 🚀 Deployment timeline
-- 🔔 Activity feed
-- 🔗 Quick links to all tools & environments
+- Real-time system status for 8 services
+- Key metrics with trend indicators
+- Codebase language breakdown
+- Deployment timeline
+- Activity feed
+- Quick links to all tools & environments
 
 ---
 
@@ -38,4 +38,4 @@ Simply open any `.html` file in your browser — no server required. All assets 
 
 ## Source Repository
 
-🔗 [github.com/vcr50/salesforce-ops-monitoring-platform](https://github.com/vcr50/salesforce-ops-monitoring-platform)
+[github.com/vcr50/salesforce-ops-monitoring-platform](https://github.com/vcr50/salesforce-ops-monitoring-platform)

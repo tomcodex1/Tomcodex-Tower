@@ -7,940 +7,940 @@
 <title>TomCodeX Inc — Developer Dashboard</title>
 <link rel="icon" type="image/png" href="assets/tcxrclogo.png" />
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  :root {
-    --bg: #0a0e1a;
-    --bg-card: rgba(255,255,255,0.03);
-    --border: rgba(255,255,255,0.06);
-    --text: #e0e6f0;
-    --text-dim: #64748b;
-    --text-mid: #94a3b8;
-    --accent-blue: #60a5fa;
-    --accent-purple: #a78bfa;
-    --accent-green: #4ade80;
-    --accent-orange: #fb923c;
-    --accent-pink: #f472b6;
-    --accent-cyan: #22d3ee;
-    --accent-yellow: #facc15;
-    --accent-red: #f87171;
-  }
+ :root {
+ --bg: #0a0e1a;
+ --bg-card: rgba(255,255,255,0.03);
+ --border: rgba(255,255,255,0.06);
+ --text: #e0e6f0;
+ --text-dim: #64748b;
+ --text-mid: #94a3b8;
+ --accent-blue: #60a5fa;
+ --accent-purple: #a78bfa;
+ --accent-green: #4ade80;
+ --accent-orange: #fb923c;
+ --accent-pink: #f472b6;
+ --accent-cyan: #22d3ee;
+ --accent-yellow: #facc15;
+ --accent-red: #f87171;
+ }
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-  }
+ body {
+ font-family: 'Inter', sans-serif;
+ background: var(--bg);
+ color: var(--text);
+ min-height: 100vh;
+ }
 
-  /* Top Bar */
-  .topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 28px;
-    border-bottom: 1px solid var(--border);
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(12px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .topbar-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .topbar-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.3rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% auto;
-    animation: shimmer 4s linear infinite;
-  }
-  .topbar-logo img {
-    flex-shrink: 0;
-    height: 30px;
-    width: auto;
-    border-radius: 6px;
-    filter: drop-shadow(0 0 6px rgba(96,165,250,0.4));
-  }
-  @keyframes shimmer {
-    0% { background-position: -200% center; }
-    100% { background-position: 200% center; }
-  }
-  .topbar-badge {
-    font-size: 0.65rem;
-    padding: 3px 10px;
-    border-radius: 20px;
-    background: rgba(74,222,128,0.15);
-    color: var(--accent-green);
-    font-weight: 600;
-    border: 1px solid rgba(74,222,128,0.25);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  .topbar-badge .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-green);
-    animation: blink 2s ease-in-out infinite;
-  }
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-  .topbar-right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .topbar-time {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--text-dim);
-  }
-  .topbar-nav {
-    display: flex;
-    gap: 4px;
-  }
-  .topbar-nav a {
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--text-mid);
-    text-decoration: none;
-    transition: all 0.2s;
-    border: 1px solid transparent;
-  }
-  .topbar-nav a:hover {
-    background: rgba(255,255,255,0.05);
-    color: var(--text);
-    border-color: var(--border);
-  }
-  .topbar-nav a.active {
-    background: rgba(96,165,250,0.1);
-    color: var(--accent-blue);
-    border-color: rgba(96,165,250,0.2);
-  }
+ /* Top Bar */
+ .topbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 16px 28px;
+ border-bottom: 1px solid var(--border);
+ background: rgba(0,0,0,0.3);
+ backdrop-filter: blur(12px);
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ .topbar-left {
+ display: flex;
+ align-items: center;
+ gap: 16px;
+ }
+ .topbar-logo {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ font-size: 1.3rem;
+ font-weight: 800;
+ background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-size: 200% auto;
+ animation: shimmer 4s linear infinite;
+ }
+ .topbar-logo img {
+ flex-shrink: 0;
+ height: 30px;
+ width: auto;
+ border-radius: 6px;
+ filter: drop-shadow(0 0 6px rgba(96,165,250,0.4));
+ }
+ @keyframes shimmer {
+ 0% { background-position: -200% center; }
+ 100% { background-position: 200% center; }
+ }
+ .topbar-badge {
+ font-size: 0.65rem;
+ padding: 3px 10px;
+ border-radius: 20px;
+ background: rgba(74,222,128,0.15);
+ color: var(--accent-green);
+ font-weight: 600;
+ border: 1px solid rgba(74,222,128,0.25);
+ display: flex;
+ align-items: center;
+ gap: 5px;
+ }
+ .topbar-badge .dot {
+ width: 6px;
+ height: 6px;
+ border-radius: 50%;
+ background: var(--accent-green);
+ animation: blink 2s ease-in-out infinite;
+ }
+ @keyframes blink {
+ 0%, 100% { opacity: 1; }
+ 50% { opacity: 0.3; }
+ }
+ .topbar-right {
+ display: flex;
+ align-items: center;
+ gap: 16px;
+ }
+ .topbar-time {
+ font-family: 'JetBrains Mono', monospace;
+ font-size: 0.78rem;
+ color: var(--text-dim);
+ }
+ .topbar-nav {
+ display: flex;
+ gap: 4px;
+ }
+ .topbar-nav a {
+ padding: 6px 14px;
+ border-radius: 8px;
+ font-size: 0.78rem;
+ font-weight: 500;
+ color: var(--text-mid);
+ text-decoration: none;
+ transition: all 0.2s;
+ border: 1px solid transparent;
+ }
+ .topbar-nav a:hover {
+ background: rgba(255,255,255,0.05);
+ color: var(--text);
+ border-color: var(--border);
+ }
+ .topbar-nav a.active {
+ background: rgba(96,165,250,0.1);
+ color: var(--accent-blue);
+ border-color: rgba(96,165,250,0.2);
+ }
 
-  /* Main Grid */
-  .dashboard {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 24px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 16px;
-  }
+ /* Main Grid */
+ .dashboard {
+ max-width: 1600px;
+ margin: 0 auto;
+ padding: 24px;
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ grid-template-rows: auto;
+ gap: 16px;
+ }
 
-  /* Card Base */
-  .card {
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px;
-    background: var(--bg-card);
-    transition: border-color 0.3s, box-shadow 0.3s;
-  }
-  .card:hover {
-    border-color: rgba(255,255,255,0.12);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-  }
-  .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
-  }
-  .card-title {
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: var(--text-mid);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .card-icon {
-    font-size: 1rem;
-  }
+ /* Card Base */
+ .card {
+ border: 1px solid var(--border);
+ border-radius: 14px;
+ padding: 20px;
+ background: var(--bg-card);
+ transition: border-color 0.3s, box-shadow 0.3s;
+ }
+ .card:hover {
+ border-color: rgba(255,255,255,0.12);
+ box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+ }
+ .card-header {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ margin-bottom: 16px;
+ }
+ .card-title {
+ font-size: 0.82rem;
+ font-weight: 700;
+ color: var(--text-mid);
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+ .card-icon {
+ font-size: 1rem;
+ }
 
-  /* Span helpers */
-  .span-2 { grid-column: span 2; }
-  .span-3 { grid-column: span 3; }
-  .span-4 { grid-column: span 4; }
+ /* Span helpers */
+ .span-2 { grid-column: span 2; }
+ .span-3 { grid-column: span 3; }
+ .span-4 { grid-column: span 4; }
 
-  /* ====== SYSTEM STATUS CARDS ====== */
-  .status-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 10px;
-  }
-  .status-item {
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background: rgba(0,0,0,0.2);
-    text-align: center;
-    transition: transform 0.2s;
-  }
-  .status-item:hover { transform: translateY(-2px); }
-  .status-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 0 auto 8px;
-    animation: pulse-dot 2s ease-in-out infinite;
-  }
-  @keyframes pulse-dot {
-    0%, 100% { box-shadow: 0 0 0 0 currentColor; }
-    50% { box-shadow: 0 0 0 6px transparent; }
-  }
-  .status-dot.online { background: var(--accent-green); color: rgba(74,222,128,0.4); }
-  .status-dot.warning { background: var(--accent-yellow); color: rgba(250,204,21,0.4); }
-  .status-dot.offline { background: var(--accent-red); color: rgba(248,113,113,0.4); }
-  .status-dot.building { background: var(--accent-orange); color: rgba(251,146,60,0.4); }
-  .status-name {
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 2px;
-  }
-  .status-detail {
-    font-size: 0.62rem;
-    color: var(--text-dim);
-  }
+ /* ====== SYSTEM STATUS CARDS ====== */
+ .status-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+ gap: 10px;
+ }
+ .status-item {
+ padding: 12px;
+ border-radius: 10px;
+ border: 1px solid var(--border);
+ background: rgba(0,0,0,0.2);
+ text-align: center;
+ transition: transform 0.2s;
+ }
+ .status-item:hover { transform: translateY(-2px); }
+ .status-dot {
+ width: 10px;
+ height: 10px;
+ border-radius: 50%;
+ margin: 0 auto 8px;
+ animation: pulse-dot 2s ease-in-out infinite;
+ }
+ @keyframes pulse-dot {
+ 0%, 100% { box-shadow: 0 0 0 0 currentColor; }
+ 50% { box-shadow: 0 0 0 6px transparent; }
+ }
+ .status-dot.online { background: var(--accent-green); color: rgba(74,222,128,0.4); }
+ .status-dot.warning { background: var(--accent-yellow); color: rgba(250,204,21,0.4); }
+ .status-dot.offline { background: var(--accent-red); color: rgba(248,113,113,0.4); }
+ .status-dot.building { background: var(--accent-orange); color: rgba(251,146,60,0.4); }
+ .status-name {
+ font-size: 0.72rem;
+ font-weight: 600;
+ color: var(--text);
+ margin-bottom: 2px;
+ }
+ .status-detail {
+ font-size: 0.62rem;
+ color: var(--text-dim);
+ }
 
-  /* ====== METRIC CARDS ====== */
-  .metric-row {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .metric {
-    flex: 1;
-    min-width: 100px;
-    padding: 14px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background: rgba(0,0,0,0.2);
-  }
-  .metric-label {
-    font-size: 0.65rem;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-  }
-  .metric-value {
-    font-size: 1.6rem;
-    font-weight: 800;
-    font-family: 'JetBrains Mono', monospace;
-    line-height: 1;
-  }
-  .metric-change {
-    font-size: 0.65rem;
-    margin-top: 4px;
-    font-weight: 600;
-  }
-  .metric-change.up { color: var(--accent-green); }
-  .metric-change.down { color: var(--accent-red); }
-  .metric-change.neutral { color: var(--text-dim); }
+ /* ====== METRIC CARDS ====== */
+ .metric-row {
+ display: flex;
+ gap: 12px;
+ flex-wrap: wrap;
+ }
+ .metric {
+ flex: 1;
+ min-width: 100px;
+ padding: 14px;
+ border-radius: 10px;
+ border: 1px solid var(--border);
+ background: rgba(0,0,0,0.2);
+ }
+ .metric-label {
+ font-size: 0.65rem;
+ color: var(--text-dim);
+ text-transform: uppercase;
+ letter-spacing: 0.5px;
+ margin-bottom: 6px;
+ }
+ .metric-value {
+ font-size: 1.6rem;
+ font-weight: 800;
+ font-family: 'JetBrains Mono', monospace;
+ line-height: 1;
+ }
+ .metric-change {
+ font-size: 0.65rem;
+ margin-top: 4px;
+ font-weight: 600;
+ }
+ .metric-change.up { color: var(--accent-green); }
+ .metric-change.down { color: var(--accent-red); }
+ .metric-change.neutral { color: var(--text-dim); }
 
-  /* ====== DEPLOYMENT TIMELINE ====== */
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .timeline-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    background: rgba(0,0,0,0.15);
-    border-left: 3px solid;
-    transition: background 0.2s;
-  }
-  .timeline-item:hover { background: rgba(255,255,255,0.03); }
-  .timeline-item.success { border-left-color: var(--accent-green); }
-  .timeline-item.warning { border-left-color: var(--accent-yellow); }
-  .timeline-item.error { border-left-color: var(--accent-red); }
-  .timeline-item.info { border-left-color: var(--accent-blue); }
-  .timeline-time {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--text-dim);
-    white-space: nowrap;
-    min-width: 50px;
-    padding-top: 2px;
-  }
-  .timeline-body {
-    flex: 1;
-  }
-  .timeline-msg {
-    font-size: 0.78rem;
-    color: var(--text);
-    font-weight: 500;
-  }
-  .timeline-detail {
-    font-size: 0.65rem;
-    color: var(--text-dim);
-    margin-top: 2px;
-  }
+ /* ====== DEPLOYMENT TIMELINE ====== */
+ .timeline {
+ display: flex;
+ flex-direction: column;
+ gap: 12px;
+ }
+ .timeline-item {
+ display: flex;
+ align-items: flex-start;
+ gap: 12px;
+ padding: 10px 12px;
+ border-radius: 8px;
+ background: rgba(0,0,0,0.15);
+ border-left: 3px solid;
+ transition: background 0.2s;
+ }
+ .timeline-item:hover { background: rgba(255,255,255,0.03); }
+ .timeline-item.success { border-left-color: var(--accent-green); }
+ .timeline-item.warning { border-left-color: var(--accent-yellow); }
+ .timeline-item.error { border-left-color: var(--accent-red); }
+ .timeline-item.info { border-left-color: var(--accent-blue); }
+ .timeline-time {
+ font-family: 'JetBrains Mono', monospace;
+ font-size: 0.65rem;
+ color: var(--text-dim);
+ white-space: nowrap;
+ min-width: 50px;
+ padding-top: 2px;
+ }
+ .timeline-body {
+ flex: 1;
+ }
+ .timeline-msg {
+ font-size: 0.78rem;
+ color: var(--text);
+ font-weight: 500;
+ }
+ .timeline-detail {
+ font-size: 0.65rem;
+ color: var(--text-dim);
+ margin-top: 2px;
+ }
 
-  /* ====== CODEBASE STATS ====== */
-  .lang-bars {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .lang-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .lang-bar-label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    min-width: 80px;
-    color: var(--text-mid);
-  }
-  .lang-bar-track {
-    flex: 1;
-    height: 8px;
-    border-radius: 4px;
-    background: rgba(255,255,255,0.05);
-    overflow: hidden;
-  }
-  .lang-bar-fill {
-    height: 100%;
-    border-radius: 4px;
-    transition: width 1s ease-out;
-    position: relative;
-  }
-  .lang-bar-fill::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-    animation: bar-shine 2s ease-in-out infinite;
-  }
-  @keyframes bar-shine {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-  .lang-bar-pct {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--text-dim);
-    min-width: 36px;
-    text-align: right;
-  }
+ /* ====== CODEBASE STATS ====== */
+ .lang-bars {
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ }
+ .lang-bar {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ }
+ .lang-bar-label {
+ font-size: 0.72rem;
+ font-weight: 600;
+ min-width: 80px;
+ color: var(--text-mid);
+ }
+ .lang-bar-track {
+ flex: 1;
+ height: 8px;
+ border-radius: 4px;
+ background: rgba(255,255,255,0.05);
+ overflow: hidden;
+ }
+ .lang-bar-fill {
+ height: 100%;
+ border-radius: 4px;
+ transition: width 1s ease-out;
+ position: relative;
+ }
+ .lang-bar-fill::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+ animation: bar-shine 2s ease-in-out infinite;
+ }
+ @keyframes bar-shine {
+ 0% { transform: translateX(-100%); }
+ 100% { transform: translateX(100%); }
+ }
+ .lang-bar-pct {
+ font-family: 'JetBrains Mono', monospace;
+ font-size: 0.65rem;
+ color: var(--text-dim);
+ min-width: 36px;
+ text-align: right;
+ }
 
-  /* ====== QUICK LINKS ====== */
-  .links-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 8px;
-  }
-  .link-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background: rgba(0,0,0,0.15);
-    text-decoration: none;
-    color: var(--text);
-    font-size: 0.78rem;
-    font-weight: 600;
-    transition: all 0.2s;
-  }
-  .link-btn:hover {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.15);
-    transform: translateY(-2px);
-  }
-  .link-btn .link-icon {
-    font-size: 1.1rem;
-  }
+ /* ====== QUICK LINKS ====== */
+ .links-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+ gap: 8px;
+ }
+ .link-btn {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ padding: 12px 14px;
+ border-radius: 10px;
+ border: 1px solid var(--border);
+ background: rgba(0,0,0,0.15);
+ text-decoration: none;
+ color: var(--text);
+ font-size: 0.78rem;
+ font-weight: 600;
+ transition: all 0.2s;
+ }
+ .link-btn:hover {
+ background: rgba(255,255,255,0.05);
+ border-color: rgba(255,255,255,0.15);
+ transform: translateY(-2px);
+ }
+ .link-btn .link-icon {
+ font-size: 1.1rem;
+ }
 
-  /* ====== MINI CHART (SVG) ====== */
-  .mini-chart {
-    width: 100%;
-    height: 60px;
-  }
-  .mini-chart line {
-    stroke: rgba(255,255,255,0.05);
-    stroke-width: 0.5;
-  }
-  .chart-area {
-    fill: url(#chartGradient);
-    opacity: 0.3;
-  }
-  .chart-line {
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-  .chart-dot {
-    animation: chart-pulse 2s ease-in-out infinite;
-  }
-  @keyframes chart-pulse {
-    0%, 100% { r: 3; opacity: 1; }
-    50% { r: 5; opacity: 0.7; }
-  }
+ /* ====== MINI CHART (SVG) ====== */
+ .mini-chart {
+ width: 100%;
+ height: 60px;
+ }
+ .mini-chart line {
+ stroke: rgba(255,255,255,0.05);
+ stroke-width: 0.5;
+ }
+ .chart-area {
+ fill: url(#chartGradient);
+ opacity: 0.3;
+ }
+ .chart-line {
+ fill: none;
+ stroke-width: 2;
+ stroke-linecap: round;
+ stroke-linejoin: round;
+ }
+ .chart-dot {
+ animation: chart-pulse 2s ease-in-out infinite;
+ }
+ @keyframes chart-pulse {
+ 0%, 100% { r: 3; opacity: 1; }
+ 50% { r: 5; opacity: 0.7; }
+ }
 
-  /* ====== ACTIVITY LOG ====== */
-  .activity-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    max-height: 260px;
-    overflow-y: auto;
-  }
-  .activity-list::-webkit-scrollbar { width: 4px; }
-  .activity-list::-webkit-scrollbar-track { background: transparent; }
-  .activity-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
-  .activity-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 10px;
-    border-radius: 6px;
-    font-size: 0.72rem;
-    transition: background 0.2s;
-  }
-  .activity-item:hover { background: rgba(255,255,255,0.03); }
-  .activity-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    flex-shrink: 0;
-  }
-  .activity-text {
-    flex: 1;
-    color: var(--text-mid);
-  }
-  .activity-text strong { color: var(--text); }
-  .activity-time {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--text-dim);
-    font-size: 0.6rem;
-    white-space: nowrap;
-  }
+ /* ====== ACTIVITY LOG ====== */
+ .activity-list {
+ display: flex;
+ flex-direction: column;
+ gap: 8px;
+ max-height: 260px;
+ overflow-y: auto;
+ }
+ .activity-list::-webkit-scrollbar { width: 4px; }
+ .activity-list::-webkit-scrollbar-track { background: transparent; }
+ .activity-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+ .activity-item {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ padding: 8px 10px;
+ border-radius: 6px;
+ font-size: 0.72rem;
+ transition: background 0.2s;
+ }
+ .activity-item:hover { background: rgba(255,255,255,0.03); }
+ .activity-icon {
+ width: 28px;
+ height: 28px;
+ border-radius: 6px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 0.8rem;
+ flex-shrink: 0;
+ }
+ .activity-text {
+ flex: 1;
+ color: var(--text-mid);
+ }
+ .activity-text strong { color: var(--text); }
+ .activity-time {
+ font-family: 'JetBrains Mono', monospace;
+ color: var(--text-dim);
+ font-size: 0.6rem;
+ white-space: nowrap;
+ }
 
-  /* ====== ENVIRONMENT BADGES ====== */
-  .env-row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .env-badge {
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    border: 1px solid;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .env-badge .env-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-  }
-  .env-prod { background: rgba(74,222,128,0.08); border-color: rgba(74,222,128,0.2); color: var(--accent-green); }
-  .env-prod .env-dot { background: var(--accent-green); }
-  .env-staging { background: rgba(250,204,21,0.08); border-color: rgba(250,204,21,0.2); color: var(--accent-yellow); }
-  .env-staging .env-dot { background: var(--accent-yellow); }
-  .env-dev { background: rgba(96,165,250,0.08); border-color: rgba(96,165,250,0.2); color: var(--accent-blue); }
-  .env-dev .env-dot { background: var(--accent-blue); }
-  .env-local { background: rgba(167,139,250,0.08); border-color: rgba(167,139,250,0.2); color: var(--accent-purple); }
-  .env-local .env-dot { background: var(--accent-purple); }
+ /* ====== ENVIRONMENT BADGES ====== */
+ .env-row {
+ display: flex;
+ gap: 8px;
+ flex-wrap: wrap;
+ }
+ .env-badge {
+ padding: 8px 14px;
+ border-radius: 8px;
+ font-size: 0.72rem;
+ font-weight: 600;
+ border: 1px solid;
+ display: flex;
+ align-items: center;
+ gap: 6px;
+ }
+ .env-badge .env-dot {
+ width: 6px;
+ height: 6px;
+ border-radius: 50%;
+ }
+ .env-prod { background: rgba(74,222,128,0.08); border-color: rgba(74,222,128,0.2); color: var(--accent-green); }
+ .env-prod .env-dot { background: var(--accent-green); }
+ .env-staging { background: rgba(250,204,21,0.08); border-color: rgba(250,204,21,0.2); color: var(--accent-yellow); }
+ .env-staging .env-dot { background: var(--accent-yellow); }
+ .env-dev { background: rgba(96,165,250,0.08); border-color: rgba(96,165,250,0.2); color: var(--accent-blue); }
+ .env-dev .env-dot { background: var(--accent-blue); }
+ .env-local { background: rgba(167,139,250,0.08); border-color: rgba(167,139,250,0.2); color: var(--accent-purple); }
+ .env-local .env-dot { background: var(--accent-purple); }
 
-  /* ====== ANIMATED COUNTER ====== */
-  .counter { display: inline-block; }
+ /* ====== ANIMATED COUNTER ====== */
+ .counter { display: inline-block; }
 
-  /* ====== TAB SYSTEM ====== */
-  .tab-bar {
-    display: flex;
-    gap: 4px;
-    padding: 0 24px;
-    border-bottom: 1px solid var(--border);
-    background: rgba(0,0,0,0.2);
-    position: sticky;
-    top: 57px;
-    z-index: 99;
-  }
-  .tab-btn {
-    padding: 12px 20px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--text-dim);
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: 'Inter', sans-serif;
-  }
-  .tab-btn:hover {
-    color: var(--text-mid);
-    background: rgba(255,255,255,0.03);
-  }
-  .tab-btn.active {
-    color: var(--accent-blue);
-    border-bottom-color: var(--accent-blue);
-    background: rgba(96,165,250,0.05);
-  }
-  .tab-page {
-    display: none;
-  }
-  .tab-page.active {
-    display: block;
-  }
+ /* ====== TAB SYSTEM ====== */
+ .tab-bar {
+ display: flex;
+ gap: 4px;
+ padding: 0 24px;
+ border-bottom: 1px solid var(--border);
+ background: rgba(0,0,0,0.2);
+ position: sticky;
+ top: 57px;
+ z-index: 99;
+ }
+ .tab-btn {
+ padding: 12px 20px;
+ font-size: 0.78rem;
+ font-weight: 600;
+ color: var(--text-dim);
+ background: none;
+ border: none;
+ border-bottom: 2px solid transparent;
+ cursor: pointer;
+ transition: all 0.2s;
+ font-family: 'Inter', sans-serif;
+ }
+ .tab-btn:hover {
+ color: var(--text-mid);
+ background: rgba(255,255,255,0.03);
+ }
+ .tab-btn.active {
+ color: var(--accent-blue);
+ border-bottom-color: var(--accent-blue);
+ background: rgba(96,165,250,0.05);
+ }
+ .tab-page {
+ display: none;
+ }
+ .tab-page.active {
+ display: block;
+ }
 
-  /* ====== UML DIAGRAM STYLES ====== */
-  .uml-container {
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 24px;
-  }
-  .uml-section {
-    margin-bottom: 32px;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-    background: var(--bg-card);
-  }
-  .uml-section-header {
-    padding: 16px 20px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.9rem;
-    font-weight: 700;
-  }
-  .uml-section-body {
-    padding: 20px;
-    overflow-x: auto;
-  }
-  .uml-class-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
-  }
-  .uml-class {
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    background: rgba(0,0,0,0.2);
-  }
-  .uml-class:hover {
-    border-color: rgba(255,255,255,0.15);
-    box-shadow: 0 0 20px rgba(96,165,250,0.1);
-  }
-  .uml-class-name {
-    padding: 10px 14px;
-    font-weight: 700;
-    font-size: 0.82rem;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .uml-class-section {
-    padding: 8px 14px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    line-height: 1.7;
-    border-bottom: 1px solid var(--border);
-  }
-  .uml-class-section:last-child {
-    border-bottom: none;
-  }
-  .uml-attr { color: #94a3b8; }
-  .uml-method { color: #86efac; }
-  .uml-sep { color: #475569; }
-  .uml-relations {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .uml-rel {
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-size: 0.7rem;
-    font-family: 'JetBrains Mono', monospace;
-    border: 1px solid var(--border);
-    background: rgba(0,0,0,0.2);
-    position: relative;
-    overflow: hidden;
-  }
-  .uml-rel::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-    transform: scaleX(0);
-    transition: transform 0.3s;
-  }
-  .uml-rel:hover::after {
-    transform: scaleX(1);
-  }
+ /* ====== UML DIAGRAM STYLES ====== */
+ .uml-container {
+ max-width: 1500px;
+ margin: 0 auto;
+ padding: 24px;
+ }
+ .uml-section {
+ margin-bottom: 32px;
+ border: 1px solid var(--border);
+ border-radius: 16px;
+ overflow: hidden;
+ background: var(--bg-card);
+ }
+ .uml-section-header {
+ padding: 16px 20px;
+ border-bottom: 1px solid var(--border);
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ font-size: 0.9rem;
+ font-weight: 700;
+ }
+ .uml-section-body {
+ padding: 20px;
+ overflow-x: auto;
+ }
+ .uml-class-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+ gap: 16px;
+ }
+ .uml-class {
+ border: 1px solid var(--border);
+ border-radius: 10px;
+ overflow: hidden;
+ transition: border-color 0.3s, box-shadow 0.3s;
+ background: rgba(0,0,0,0.2);
+ }
+ .uml-class:hover {
+ border-color: rgba(255,255,255,0.15);
+ box-shadow: 0 0 20px rgba(96,165,250,0.1);
+ }
+ .uml-class-name {
+ padding: 10px 14px;
+ font-weight: 700;
+ font-size: 0.82rem;
+ border-bottom: 1px solid var(--border);
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+ .uml-class-section {
+ padding: 8px 14px;
+ font-family: 'JetBrains Mono', monospace;
+ font-size: 0.68rem;
+ line-height: 1.7;
+ border-bottom: 1px solid var(--border);
+ }
+ .uml-class-section:last-child {
+ border-bottom: none;
+ }
+ .uml-attr { color: #94a3b8; }
+ .uml-method { color: #86efac; }
+ .uml-sep { color: #475569; }
+ .uml-relations {
+ margin-top: 20px;
+ display: flex;
+ flex-wrap: wrap;
+ gap: 12px;
+ }
+ .uml-rel {
+ padding: 6px 14px;
+ border-radius: 8px;
+ font-size: 0.7rem;
+ font-family: 'JetBrains Mono', monospace;
+ border: 1px solid var(--border);
+ background: rgba(0,0,0,0.2);
+ position: relative;
+ overflow: hidden;
+ }
+ .uml-rel::after {
+ content: '';
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+ transform: scaleX(0);
+ transition: transform 0.3s;
+ }
+ .uml-rel:hover::after {
+ transform: scaleX(1);
+ }
 
-  /* Sequence Diagram */
-  .seq-diagram {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    min-width: 900px;
-  }
-  .seq-participants {
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 12px;
-    border-bottom: 1px dashed rgba(255,255,255,0.1);
-    margin-bottom: 16px;
-  }
-  .seq-participant {
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    border: 1.5px solid;
-    text-align: center;
-    min-width: 100px;
-  }
-  .seq-step {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 0.7rem;
-    transition: background 0.2s;
-  }
-  .seq-step:hover { background: rgba(255,255,255,0.03); }
-  .seq-num {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.6rem;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-  .seq-arrow {
-    color: var(--text-dim);
-    font-family: 'JetBrains Mono', monospace;
-    flex-shrink: 0;
-  }
-  .seq-label {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--text-mid);
-  }
-  .seq-from { font-weight: 600; }
-  .seq-to { font-weight: 600; }
-  .seq-note {
-    font-size: 0.62rem;
-    color: var(--text-dim);
-    font-style: italic;
-    margin-left: 48px;
-  }
+ /* Sequence Diagram */
+ .seq-diagram {
+ display: flex;
+ flex-direction: column;
+ gap: 0;
+ min-width: 900px;
+ }
+ .seq-participants {
+ display: flex;
+ justify-content: space-around;
+ padding-bottom: 12px;
+ border-bottom: 1px dashed rgba(255,255,255,0.1);
+ margin-bottom: 16px;
+ }
+ .seq-participant {
+ padding: 8px 16px;
+ border-radius: 8px;
+ font-size: 0.72rem;
+ font-weight: 700;
+ border: 1.5px solid;
+ text-align: center;
+ min-width: 100px;
+ }
+ .seq-step {
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ padding: 8px 12px;
+ border-radius: 6px;
+ font-size: 0.7rem;
+ transition: background 0.2s;
+ }
+ .seq-step:hover { background: rgba(255,255,255,0.03); }
+ .seq-num {
+ width: 24px;
+ height: 24px;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 0.6rem;
+ font-weight: 700;
+ flex-shrink: 0;
+ }
+ .seq-arrow {
+ color: var(--text-dim);
+ font-family: 'JetBrains Mono', monospace;
+ flex-shrink: 0;
+ }
+ .seq-label {
+ font-family: 'JetBrains Mono', monospace;
+ color: var(--text-mid);
+ }
+ .seq-from { font-weight: 600; }
+ .seq-to { font-weight: 600; }
+ .seq-note {
+ font-size: 0.62rem;
+ color: var(--text-dim);
+ font-style: italic;
+ margin-left: 48px;
+ }
 
-  /* Component Diagram */
-  .comp-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-  }
-  .comp-group {
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    background: rgba(0,0,0,0.15);
-  }
-  .comp-group-title {
-    padding: 10px 14px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .comp-list {
-    padding: 10px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .comp-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-size: 0.7rem;
-    background: rgba(0,0,0,0.15);
-    border: 1px solid var(--border);
-    transition: border-color 0.2s;
-  }
-  .comp-item:hover { border-color: rgba(255,255,255,0.12); }
-  .comp-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-  .comp-name { font-weight: 600; flex: 1; }
-  .comp-tag {
-    font-size: 0.58rem;
-    padding: 2px 6px;
-    border-radius: 4px;
-    background: rgba(255,255,255,0.05);
-    color: var(--text-dim);
-  }
+ /* Component Diagram */
+ .comp-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 16px;
+ }
+ .comp-group {
+ border: 1px solid var(--border);
+ border-radius: 12px;
+ overflow: hidden;
+ background: rgba(0,0,0,0.15);
+ }
+ .comp-group-title {
+ padding: 10px 14px;
+ font-size: 0.75rem;
+ font-weight: 700;
+ border-bottom: 1px solid var(--border);
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+ .comp-list {
+ padding: 10px 14px;
+ display: flex;
+ flex-direction: column;
+ gap: 6px;
+ }
+ .comp-item {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ padding: 6px 10px;
+ border-radius: 6px;
+ font-size: 0.7rem;
+ background: rgba(0,0,0,0.15);
+ border: 1px solid var(--border);
+ transition: border-color 0.2s;
+ }
+ .comp-item:hover { border-color: rgba(255,255,255,0.12); }
+ .comp-dot {
+ width: 6px;
+ height: 6px;
+ border-radius: 50%;
+ flex-shrink: 0;
+ }
+ .comp-name { font-weight: 600; flex: 1; }
+ .comp-tag {
+ font-size: 0.58rem;
+ padding: 2px 6px;
+ border-radius: 4px;
+ background: rgba(255,255,255,0.05);
+ color: var(--text-dim);
+ }
 
-  /* ER Diagram */
-  .er-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-  }
-  .er-table {
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    background: rgba(0,0,0,0.2);
-    transition: border-color 0.3s;
-  }
-  .er-table:hover { border-color: rgba(255,255,255,0.15); }
-  .er-table-name {
-    padding: 10px 14px;
-    font-weight: 700;
-    font-size: 0.8rem;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .er-col {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 5px 14px;
-    font-size: 0.68rem;
-    font-family: 'JetBrains Mono', monospace;
-    border-bottom: 1px solid rgba(255,255,255,0.03);
-  }
-  .er-col:last-child { border-bottom: none; }
-  .er-pk { color: var(--accent-yellow); font-weight: 700; }
-  .er-fk { color: var(--accent-purple); font-weight: 600; }
-  .er-type { color: var(--text-dim); margin-left: auto; }
-  .er-nullable { color: var(--text-dim); font-size: 0.58rem; }
+ /* ER Diagram */
+ .er-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 16px;
+ }
+ .er-table {
+ border: 1px solid var(--border);
+ border-radius: 10px;
+ overflow: hidden;
+ background: rgba(0,0,0,0.2);
+ transition: border-color 0.3s;
+ }
+ .er-table:hover { border-color: rgba(255,255,255,0.15); }
+ .er-table-name {
+ padding: 10px 14px;
+ font-weight: 700;
+ font-size: 0.8rem;
+ border-bottom: 1px solid var(--border);
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+ .er-col {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ padding: 5px 14px;
+ font-size: 0.68rem;
+ font-family: 'JetBrains Mono', monospace;
+ border-bottom: 1px solid rgba(255,255,255,0.03);
+ }
+ .er-col:last-child { border-bottom: none; }
+ .er-pk { color: var(--accent-yellow); font-weight: 700; }
+ .er-fk { color: var(--accent-purple); font-weight: 600; }
+ .er-type { color: var(--text-dim); margin-left: auto; }
+ .er-nullable { color: var(--text-dim); font-size: 0.58rem; }
 
-  /* Responsive */
-  @media (max-width: 1200px) {
-    .dashboard { grid-template-columns: 1fr 1fr; }
-    .span-3 { grid-column: span 2; }
-    .span-4 { grid-column: span 2; }
-  }
-  @media (max-width: 768px) {
-    .dashboard { grid-template-columns: 1fr; }
-    .span-2, .span-3, .span-4 { grid-column: span 1; }
-    .topbar { flex-direction: column; gap: 12px; }
-    .topbar-nav { flex-wrap: wrap; justify-content: center; }
-  }
+ /* Responsive */
+ @media (max-width: 1200px) {
+ .dashboard { grid-template-columns: 1fr 1fr; }
+ .span-3 { grid-column: span 2; }
+ .span-4 { grid-column: span 2; }
+ }
+ @media (max-width: 768px) {
+ .dashboard { grid-template-columns: 1fr; }
+ .span-2, .span-3, .span-4 { grid-column: span 1; }
+ .topbar { flex-direction: column; gap: 12px; }
+ .topbar-nav { flex-wrap: wrap; justify-content: center; }
+ }
 </style>
 </head>
 <body>
 
 <!-- ===== TOP BAR ===== -->
 <div class="topbar">
-  <div class="topbar-left">
-    <div class="topbar-logo"><img src="assets/tcxrclogo.png" alt="TomCodeX" /><span>TomCodeX DevOps</span></div>
-    <div class="topbar-badge"><div class="dot"></div>All Systems Operational</div>
-    <div id="sync-indicator" style="display:flex;align-items:center;gap:6px;font-size:0.65rem;color:var(--text-dim);margin-left:8px;">
-      <div class="sync-dot" style="width:7px;height:7px;border-radius:50%;background:var(--accent-cyan);transition:background 0.3s;"></div>
-      <span class="sync-label">Initializing…</span>
-    </div>
-  </div>
-  <div class="topbar-right">
-    <div class="topbar-nav">
-      <a href="#" class="active">Dashboard</a>
-      <a href="architecture-map.html">Architecture</a>
-      <a href="https://github.com/tomcodex" target="_blank">GitHub</a>
-      <a href="https://sentinelflow.vercel.app" target="_blank">Website</a>
-    </div>
-    <div class="topbar-time" id="clock"></div>
-  </div>
+ <div class="topbar-left">
+ <div class="topbar-logo"><img src="assets/tcxrclogo.png" alt="TomCodeX" /><span>TomCodeX DevOps</span></div>
+ <div class="topbar-badge"><div class="dot"></div>All Systems Operational</div>
+ <div id="sync-indicator" style="display:flex;align-items:center;gap:6px;font-size:0.65rem;color:var(--text-dim);margin-left:8px;">
+ <div class="sync-dot" style="width:7px;height:7px;border-radius:50%;background:var(--accent-cyan);transition:background 0.3s;"></div>
+ <span class="sync-label">Initializing…</span>
+ </div>
+ </div>
+ <div class="topbar-right">
+ <div class="topbar-nav">
+ <a href="#" class="active">Dashboard</a>
+ <a href="architecture-map.html">Architecture</a>
+ <a href="https://github.com/tomcodex" target="_blank">GitHub</a>
+ <a href="https://sentinelflow.vercel.app" target="_blank">Website</a>
+ </div>
+ <div class="topbar-time" id="clock"></div>
+ </div>
 </div>
 
 <!-- ===== TAB BAR ===== -->
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('dashboard', this)">📊 Dashboard</button>
-  <button class="tab-btn" onclick="switchTab('uml', this)">📐 UML Diagrams</button>
+ <button class="tab-btn active" onclick="switchTab('dashboard', this)"> Dashboard</button>
+ <button class="tab-btn" onclick="switchTab('uml', this)"> UML Diagrams</button>
 </div>
 
 <!-- ===== TAB: Dashboard ===== -->
 <div id="page-dashboard" class="tab-page active">
 <div class="dashboard">
 
-  <!-- ROW 1: System Status (4 cols) -->
-  <div class="card span-4">
-    <div class="card-header">
-      <div class="card-title"><span class="card-icon">🟢</span> System Status</div>
-      <div style="font-size:0.65rem;color:var(--text-dim);" id="sync-refresh-label">Auto-refresh: 30s</div>
-    </div>
-    <div class="status-grid" id="sync-status-grid">
-      <!-- Auto-synced from dashboard-data.json -->
-      <div class="status-item"><div class="status-name" style="color:var(--text-dim);">Loading…</div></div>
-    </div>
-  </div>
+ <!-- ROW 1: System Status (4 cols) -->
+ <div class="card span-4">
+ <div class="card-header">
+ <div class="card-title"><span class="card-icon"></span> System Status</div>
+ <div style="font-size:0.65rem;color:var(--text-dim);" id="sync-refresh-label">Auto-refresh: 30s</div>
+ </div>
+ <div class="status-grid" id="sync-status-grid">
+ <!-- Auto-synced from dashboard-data.json -->
+ <div class="status-item"><div class="status-name" style="color:var(--text-dim);">Loading…</div></div>
+ </div>
+ </div>
 
-  <!-- ROW 2: Key Metrics (4 cols) -->
-  <div class="card span-2">
-    <div class="card-header">
-      <div class="card-title"><span class="card-icon">📊</span> Key Metrics</div>
-    </div>
-    <div id="sync-metrics">
-      <!-- Auto-synced from dashboard-data.json -->
-      <div class="metric-row"><div class="metric"><div class="metric-label" style="color:var(--text-dim);">Loading…</div></div></div>
-    </div>
-  </div>
+ <!-- ROW 2: Key Metrics (4 cols) -->
+ <div class="card span-2">
+ <div class="card-header">
+ <div class="card-title"><span class="card-icon"></span> Key Metrics</div>
+ </div>
+ <div id="sync-metrics">
+ <!-- Auto-synced from dashboard-data.json -->
+ <div class="metric-row"><div class="metric"><div class="metric-label" style="color:var(--text-dim);">Loading…</div></div></div>
+ </div>
+ </div>
 
-  <!-- Request Volume Chart -->
-  <div class="card span-2">
-    <div class="card-header">
-      <div class="card-title"><span class="card-icon">📈</span> API Request Volume (7d)</div>
-    </div>
-    <svg class="mini-chart" id="sync-api-chart" viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
-      <!-- Auto-synced from dashboard-data.json -->
-    </svg>
-    <div style="display:flex;justify-content:space-between;margin-top:8px;">
-      <div style="font-size:0.65rem;color:var(--text-dim);" id="sync-api-peak">Loading…</div>
-      <div style="font-size:0.65rem;" id="sync-api-trend">Loading…</div>
-    </div>
-  </div>
+ <!-- Request Volume Chart -->
+ <div class="card span-2">
+ <div class="card-header">
+ <div class="card-title"><span class="card-icon"></span> API Request Volume (7d)</div>
+ </div>
+ <svg class="mini-chart" id="sync-api-chart" viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+ <!-- Auto-synced from dashboard-data.json -->
+ </svg>
+ <div style="display:flex;justify-content:space-between;margin-top:8px;">
+ <div style="font-size:0.65rem;color:var(--text-dim);" id="sync-api-peak">Loading…</div>
+ <div style="font-size:0.65rem;" id="sync-api-trend">Loading…</div>
+ </div>
+ </div>
 
-  <!-- ROW 3: Codebase + Environments -->
-  <div class="card span-2">
-    <div class="card-header">
-      <div class="card-title"><span class="card-icon">💻</span> Codebase Breakdown</div>
-    </div>
-    <div class="lang-bars" id="sync-codebase-bars">
-      <!-- Auto-synced from dashboard-data.json -->
-      <div class="lang-bar"><div class="lang-bar-label" style="color:var(--text-dim);">Loading…</div></div>
-    </div>
-    <div style="margin-top:14px;display:flex;gap:16px;font-size:0.7rem;color:var(--text-dim);" id="sync-codebase-stats">
-      <!-- Auto-synced -->
-    </div>
-  </div>
+ <!-- ROW 3: Codebase + Environments -->
+ <div class="card span-2">
+ <div class="card-header">
+ <div class="card-title"><span class="card-icon"></span> Codebase Breakdown</div>
+ </div>
+ <div class="lang-bars" id="sync-codebase-bars">
+ <!-- Auto-synced from dashboard-data.json -->
+ <div class="lang-bar"><div class="lang-bar-label" style="color:var(--text-dim);">Loading…</div></div>
+ </div>
+ <div style="margin-top:14px;display:flex;gap:16px;font-size:0.7rem;color:var(--text-dim);" id="sync-codebase-stats">
+ <!-- Auto-synced -->
+ </div>
+ </div>
 
-  <!-- Environments -->
-  <div class="card">
-    <div class="card-header">
-      <div class="card-title"><span class="card-icon">🌐</span> Environments</div>
-    </div>
-    <div class="env-row" id="sync-env-row">
-      <!-- Auto-synced from dashboard-data.json -->
-    </div>
-    <div style="margin-top:14px;">
-      <div style="font-size:0.7rem;color:var(--text-dim);margin-bottom:6px;">Deploy Targets</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;" id="sync-deploy-targets">
-        <!-- Auto-synced from dashboard-data.json -->
-      </div>
-    </div>
-  </div>
+ <!-- Environments -->
+ <div class="card">
+ <div class="card-header">
+ <div class="card-title"><span class="card-icon"></span> Environments</div>
+ </div>
+ <div class="env-row" id="sync-env-row">
+ <!-- Auto-synced from dashboard-data.json -->
+ </div>
+ <div style="margin-top:14px;">
+ <div style="font-size:0.7rem;color:var(--text-dim);margin-bottom:6px;">Deploy Targets</div>
+ <div style="display:flex;flex-wrap:wrap;gap:6px;" id="sync-deploy-targets">
+ <!-- Auto-synced from dashboard-data.json -->
+ </div>
+ </div>
+ </div>
 
-  <!-- AI Models -->
-  <div class="card">
-    <div class="card-header">
-      <div class="card-title"><span class="card-icon">🧠</span> AI Models</div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:8px;" id="sync-ai-models">
-      <!-- Auto-synced from dashboard-data.json -->
-      <div style="font-size:0.75rem;color:var(--text-dim);">Loading…</div>
-    </div>
-  </div>
+ <!-- AI Models -->
+ <div class="card">
+ <div class="card-header">
+ <div class="card-title"><span class="card-icon"></span> AI Models</div>
+ </div>
+ <div style="display:flex;flex-direction:column;gap:8px;" id="sync-ai-models">
+ <!-- Auto-synced from dashboard-data.json -->
+ <div style="font-size:0.75rem;color:var(--text-dim);">Loading…</div>
+ </div>
+ </div>
 
-  <!-- ROW 4: Deployment Timeline + Activity -->
-  <div class="card span-2">
-    <div class="card-header">
-      <div class="card-title"><span class="card-icon">🚀</span> Recent Deployments</div>
-    </div>
-    <div class="timeline" id="sync-deployments">
-      <!-- Auto-synced from dashboard-data.json -->
-      <div class="timeline-item info"><div class="timeline-body"><div class="timeline-msg" style="color:var(--text-dim);">Loading…</div></div></div>
-    </div>
-  </div>
+ <!-- ROW 4: Deployment Timeline + Activity -->
+ <div class="card span-2">
+ <div class="card-header">
+ <div class="card-title"><span class="card-icon"></span> Recent Deployments</div>
+ </div>
+ <div class="timeline" id="sync-deployments">
+ <!-- Auto-synced from dashboard-data.json -->
+ <div class="timeline-item info"><div class="timeline-body"><div class="timeline-msg" style="color:var(--text-dim);">Loading…</div></div></div>
+ </div>
+ </div>
 
-  <!-- Activity Log -->
-  <div class="card span-2">
-    <div class="card-header">
-      <div class="card-title"><span class="card-icon">📋</span> Activity Feed</div>
-    </div>
-    <div class="activity-list" id="sync-activity">
-      <!-- Auto-synced from dashboard-data.json -->
-      <div class="activity-item"><div class="activity-text" style="color:var(--text-dim);">Loading…</div></div>
-    </div>
-  </div>
+ <!-- Activity Log -->
+ <div class="card span-2">
+ <div class="card-header">
+ <div class="card-title"><span class="card-icon"></span> Activity Feed</div>
+ </div>
+ <div class="activity-list" id="sync-activity">
+ <!-- Auto-synced from dashboard-data.json -->
+ <div class="activity-item"><div class="activity-text" style="color:var(--text-dim);">Loading…</div></div>
+ </div>
+ </div>
 
-  <!-- ROW 5: Quick Links -->
-  <div class="card span-4">
-    <div class="card-header">
-      <div class="card-title"><span class="card-icon">⚡</span> Quick Links</div>
-    </div>
-    <div class="links-grid">
-      <a class="link-btn" href="architecture-map.html"><span class="link-icon">🏗️</span>Architecture Map</a>
-      <a class="link-btn" href="https://sftx.vercel.app/" target="_blank"><span class="link-icon">🌐</span>Marketing Site</a>
-      <a class="link-btn" href="https://tomcodex.vercel.app" target="_blank"><span class="link-icon">🏢</span>TomCodeX Site</a>
-      <a class="link-btn" href="#"><span class="link-icon">🛡️</span>Salesforce Org</a>
-      <a class="link-btn" href="#"><span class="link-icon">🖥️</span>Node.js Admin</a>
-      <a class="link-btn" href="#"><span class="link-icon">🧠</span>AI Dashboard</a>
-      <a class="link-btn" href="#"><span class="link-icon">🐳</span>Docker Compose</a>
-      <a class="link-btn" href="#"><span class="link-icon">📊</span>Grafana</a>
-      <a class="link-btn" href="#"><span class="link-icon">🔍</span>pgAdmin</a>
-      <a class="link-btn" href="#"><span class="link-icon">📋</span>Redis Insight</a>
-      <a class="link-btn" href="#"><span class="link-icon">🐙</span>GitHub Repo</a>
-      <a class="link-btn" href="#"><span class="link-icon">📖</span>API Docs</a>
-    </div>
-  </div>
+ <!-- ROW 5: Quick Links -->
+ <div class="card span-4">
+ <div class="card-header">
+ <div class="card-title"><span class="card-icon"></span> Quick Links</div>
+ </div>
+ <div class="links-grid">
+ <a class="link-btn" href="architecture-map.html"><span class="link-icon"></span>Architecture Map</a>
+ <a class="link-btn" href="https://sftx.vercel.app/" target="_blank"><span class="link-icon"></span>Marketing Site</a>
+ <a class="link-btn" href="https://tomcodex.vercel.app" target="_blank"><span class="link-icon"></span>TomCodeX Site</a>
+ <a class="link-btn" href="#"><span class="link-icon"></span>Salesforce Org</a>
+ <a class="link-btn" href="#"><span class="link-icon"></span>Node.js Admin</a>
+ <a class="link-btn" href="#"><span class="link-icon"></span>AI Dashboard</a>
+ <a class="link-btn" href="#"><span class="link-icon"></span>Docker Compose</a>
+ <a class="link-btn" href="#"><span class="link-icon"></span>Grafana</a>
+ <a class="link-btn" href="#"><span class="link-icon"></span>pgAdmin</a>
+ <a class="link-btn" href="#"><span class="link-icon"></span>Redis Insight</a>
+ <a class="link-btn" href="#"><span class="link-icon"></span>GitHub Repo</a>
+ <a class="link-btn" href="#"><span class="link-icon"></span>API Docs</a>
+ </div>
+ </div>
 
 </div>
 </div><!-- end page-dashboard -->
@@ -949,650 +949,650 @@
 <div id="page-uml" class="tab-page">
 <div class="uml-container">
 
-  <!-- ===== UML 1: Class Diagram ===== -->
-  <div class="uml-section">
-    <div class="uml-section-header" style="color:var(--accent-purple);">📐 UML Class Diagram — Core Domain Models</div>
-    <div class="uml-section-body">
-      <div class="uml-class-grid">
+ <!-- ===== UML 1: Class Diagram ===== -->
+ <div class="uml-section">
+ <div class="uml-section-header" style="color:var(--accent-purple);"> UML Class Diagram — Core Domain Models</div>
+ <div class="uml-section-body">
+ <div class="uml-class-grid">
 
-        <!-- Incident -->
-        <div class="uml-class">
-          <div class="uml-class-name" style="color:#c4b5fd;">🟣 Incident</div>
-          <div class="uml-class-section">
-            <div class="uml-attr">- id: String</div>
-            <div class="uml-attr">- title: String</div>
-            <div class="uml-attr">- severity: Enum</div>
-            <div class="uml-attr">- status: Enum</div>
-            <div class="uml-attr">- source: String</div>
-            <div class="uml-attr">- createdAt: DateTime</div>
-          </div>
-          <div class="uml-class-section">
-            <div class="uml-method">+ escalate(): void</div>
-            <div class="uml-method">+ resolve(): void</div>
-            <div class="uml-method">+ getRiskScore(): Float</div>
-          </div>
-        </div>
+ <!-- Incident -->
+ <div class="uml-class">
+ <div class="uml-class-name" style="color:#c4b5fd;"> Incident</div>
+ <div class="uml-class-section">
+ <div class="uml-attr">- id: String</div>
+ <div class="uml-attr">- title: String</div>
+ <div class="uml-attr">- severity: Enum</div>
+ <div class="uml-attr">- status: Enum</div>
+ <div class="uml-attr">- source: String</div>
+ <div class="uml-attr">- createdAt: DateTime</div>
+ </div>
+ <div class="uml-class-section">
+ <div class="uml-method">+ escalate(): void</div>
+ <div class="uml-method">+ resolve(): void</div>
+ <div class="uml-method">+ getRiskScore(): Float</div>
+ </div>
+ </div>
 
-        <!-- Organization -->
-        <div class="uml-class">
-          <div class="uml-class-name" style="color:#93bbfd;">🔵 Organization</div>
-          <div class="uml-class-section">
-            <div class="uml-attr">- id: String</div>
-            <div class="uml-attr">- name: String</div>
-            <div class="uml-attr">- sfOrgId: String</div>
-            <div class="uml-attr">- plan: Enum</div>
-            <div class="uml-attr">- settings: JSON</div>
-          </div>
-          <div class="uml-class-section">
-            <div class="uml-method">+ getActiveIncidents(): List</div>
-            <div class="uml-method">+ getConfig(): Dict</div>
-            <div class="uml-method">+ updatePlan(): void</div>
-          </div>
-        </div>
+ <!-- Organization -->
+ <div class="uml-class">
+ <div class="uml-class-name" style="color:#93bbfd;"> Organization</div>
+ <div class="uml-class-section">
+ <div class="uml-attr">- id: String</div>
+ <div class="uml-attr">- name: String</div>
+ <div class="uml-attr">- sfOrgId: String</div>
+ <div class="uml-attr">- plan: Enum</div>
+ <div class="uml-attr">- settings: JSON</div>
+ </div>
+ <div class="uml-class-section">
+ <div class="uml-method">+ getActiveIncidents(): List</div>
+ <div class="uml-method">+ getConfig(): Dict</div>
+ <div class="uml-method">+ updatePlan(): void</div>
+ </div>
+ </div>
 
-        <!-- ChatSession -->
-        <div class="uml-class">
-          <div class="uml-class-name" style="color:#fdba74;">🟠 ChatSession</div>
-          <div class="uml-class-section">
-            <div class="uml-attr">- id: String</div>
-            <div class="uml-attr">- userId: String</div>
-            <div class="uml-attr">- messages: List</div>
-            <div class="uml-attr">- model: String</div>
-            <div class="uml-attr">- context: Dict</div>
-          </div>
-          <div class="uml-class-section">
-            <div class="uml-method">+ sendMessage(): Response</div>
-            <div class="uml-method">+ getHistory(): List</div>
-            <div class="uml-method">+ clearContext(): void</div>
-          </div>
-        </div>
+ <!-- ChatSession -->
+ <div class="uml-class">
+ <div class="uml-class-name" style="color:#fdba74;"> ChatSession</div>
+ <div class="uml-class-section">
+ <div class="uml-attr">- id: String</div>
+ <div class="uml-attr">- userId: String</div>
+ <div class="uml-attr">- messages: List</div>
+ <div class="uml-attr">- model: String</div>
+ <div class="uml-attr">- context: Dict</div>
+ </div>
+ <div class="uml-class-section">
+ <div class="uml-method">+ sendMessage(): Response</div>
+ <div class="uml-method">+ getHistory(): List</div>
+ <div class="uml-method">+ clearContext(): void</div>
+ </div>
+ </div>
 
-        <!-- PolicyRule -->
-        <div class="uml-class">
-          <div class="uml-class-name" style="color:#f9a8d4;">🩷 PolicyRule</div>
-          <div class="uml-class-section">
-            <div class="uml-attr">- id: String</div>
-            <div class="uml-attr">- name: String</div>
-            <div class="uml-attr">- condition: Expression</div>
-            <div class="uml-attr">- action: Enum</div>
-            <div class="uml-attr">- priority: Int</div>
-          </div>
-          <div class="uml-class-section">
-            <div class="uml-method">+ evaluate(): Bool</div>
-            <div class="uml-method">+ apply(): ActionResult</div>
-            <div class="uml-method">+ override(): void</div>
-          </div>
-        </div>
+ <!-- PolicyRule -->
+ <div class="uml-class">
+ <div class="uml-class-name" style="color:#f9a8d4;"> PolicyRule</div>
+ <div class="uml-class-section">
+ <div class="uml-attr">- id: String</div>
+ <div class="uml-attr">- name: String</div>
+ <div class="uml-attr">- condition: Expression</div>
+ <div class="uml-attr">- action: Enum</div>
+ <div class="uml-attr">- priority: Int</div>
+ </div>
+ <div class="uml-class-section">
+ <div class="uml-method">+ evaluate(): Bool</div>
+ <div class="uml-method">+ apply(): ActionResult</div>
+ <div class="uml-method">+ override(): void</div>
+ </div>
+ </div>
 
-        <!-- ApprovalRequest -->
-        <div class="uml-class">
-          <div class="uml-class-name" style="color:#86efac;">🟢 ApprovalRequest</div>
-          <div class="uml-class-section">
-            <div class="uml-attr">- id: String</div>
-            <div class="uml-attr">- incidentId: String</div>
-            <div class="uml-attr">- requestedAction: String</div>
-            <div class="uml-attr">- status: Enum</div>
-            <div class="uml-attr">- approver: String</div>
-          </div>
-          <div class="uml-class-section">
-            <div class="uml-method">+ approve(): void</div>
-            <div class="uml-method">+ reject(): void</div>
-            <div class="uml-method">+ escalate(): void</div>
-          </div>
-        </div>
+ <!-- ApprovalRequest -->
+ <div class="uml-class">
+ <div class="uml-class-name" style="color:#86efac;"> ApprovalRequest</div>
+ <div class="uml-class-section">
+ <div class="uml-attr">- id: String</div>
+ <div class="uml-attr">- incidentId: String</div>
+ <div class="uml-attr">- requestedAction: String</div>
+ <div class="uml-attr">- status: Enum</div>
+ <div class="uml-attr">- approver: String</div>
+ </div>
+ <div class="uml-class-section">
+ <div class="uml-method">+ approve(): void</div>
+ <div class="uml-method">+ reject(): void</div>
+ <div class="uml-method">+ escalate(): void</div>
+ </div>
+ </div>
 
-        <!-- AuditLog -->
-        <div class="uml-class">
-          <div class="uml-class-name" style="color:#67e8f9;">🔵 AuditLog</div>
-          <div class="uml-class-section">
-            <div class="uml-attr">- id: String</div>
-            <div class="uml-attr">- action: String</div>
-            <div class="uml-attr">- actor: String</div>
-            <div class="uml-attr">- timestamp: DateTime</div>
-            <div class="uml-attr">- metadata: JSON</div>
-          </div>
-          <div class="uml-class-section">
-            <div class="uml-method">+ query(): List</div>
-            <div class="uml-method">+ export(): File</div>
-            <div class="uml-method">+ replay(): Timeline</div>
-          </div>
-        </div>
+ <!-- AuditLog -->
+ <div class="uml-class">
+ <div class="uml-class-name" style="color:#67e8f9;"> AuditLog</div>
+ <div class="uml-class-section">
+ <div class="uml-attr">- id: String</div>
+ <div class="uml-attr">- action: String</div>
+ <div class="uml-attr">- actor: String</div>
+ <div class="uml-attr">- timestamp: DateTime</div>
+ <div class="uml-attr">- metadata: JSON</div>
+ </div>
+ <div class="uml-class-section">
+ <div class="uml-method">+ query(): List</div>
+ <div class="uml-method">+ export(): File</div>
+ <div class="uml-method">+ replay(): Timeline</div>
+ </div>
+ </div>
 
-        <!-- MemoryStore -->
-        <div class="uml-class">
-          <div class="uml-class-name" style="color:#fde047;">🟡 MemoryStore</div>
-          <div class="uml-class-section">
-            <div class="uml-attr">- id: String</div>
-            <div class="uml-attr">- orgId: String</div>
-            <div class="uml-attr">- embeddings: Vector</div>
-            <div class="uml-attr">- content: Text</div>
-            <div class="uml-attr">- tags: List</div>
-          </div>
-          <div class="uml-class-section">
-            <div class="uml-method">+ search(): List</div>
-            <div class="uml-method">+ store(): void</div>
-            <div class="uml-method">+ similarity(): Float</div>
-          </div>
-        </div>
+ <!-- MemoryStore -->
+ <div class="uml-class">
+ <div class="uml-class-name" style="color:#fde047;"> MemoryStore</div>
+ <div class="uml-class-section">
+ <div class="uml-attr">- id: String</div>
+ <div class="uml-attr">- orgId: String</div>
+ <div class="uml-attr">- embeddings: Vector</div>
+ <div class="uml-attr">- content: Text</div>
+ <div class="uml-attr">- tags: List</div>
+ </div>
+ <div class="uml-class-section">
+ <div class="uml-method">+ search(): List</div>
+ <div class="uml-method">+ store(): void</div>
+ <div class="uml-method">+ similarity(): Float</div>
+ </div>
+ </div>
 
-        <!-- Subscription -->
-        <div class="uml-class">
-          <div class="uml-class-name" style="color:#f9a8d4;">🩷 Subscription</div>
-          <div class="uml-class-section">
-            <div class="uml-attr">- id: String</div>
-            <div class="uml-attr">- orgId: String</div>
-            <div class="uml-attr">- plan: Enum</div>
-            <div class="uml-attr">- status: Enum</div>
-            <div class="uml-attr">- expiresAt: DateTime</div>
-          </div>
-          <div class="uml-class-section">
-            <div class="uml-method">+ renew(): void</div>
-            <div class="uml-method">+ cancel(): void</div>
-            <div class="uml-method">+ upgrade(): void</div>
-          </div>
-        </div>
+ <!-- Subscription -->
+ <div class="uml-class">
+ <div class="uml-class-name" style="color:#f9a8d4;"> Subscription</div>
+ <div class="uml-class-section">
+ <div class="uml-attr">- id: String</div>
+ <div class="uml-attr">- orgId: String</div>
+ <div class="uml-attr">- plan: Enum</div>
+ <div class="uml-attr">- status: Enum</div>
+ <div class="uml-attr">- expiresAt: DateTime</div>
+ </div>
+ <div class="uml-class-section">
+ <div class="uml-method">+ renew(): void</div>
+ <div class="uml-method">+ cancel(): void</div>
+ <div class="uml-method">+ upgrade(): void</div>
+ </div>
+ </div>
 
-      </div>
+ </div>
 
-      <!-- Relations -->
-      <div class="uml-relations">
-        <div class="uml-rel"><span style="color:#93bbfd;">Organization</span> <span class="uml-sep">1──*</span> <span style="color:#c4b5fd;">Incident</span></div>
-        <div class="uml-rel"><span style="color:#93bbfd;">Organization</span> <span class="uml-sep">1──*</span> <span style="color:#fdba74;">ChatSession</span></div>
-        <div class="uml-rel"><span style="color:#c4b5fd;">Incident</span> <span class="uml-sep">*──1</span> <span style="color:#f9a8d4;">PolicyRule</span></div>
-        <div class="uml-rel"><span style="color:#c4b5fd;">Incident</span> <span class="uml-sep">1──*</span> <span style="color:#86efac;">ApprovalRequest</span></div>
-        <div class="uml-rel"><span style="color:#93bbfd;">Organization</span> <span class="uml-sep">1──*</span> <span style="color:#fde047;">MemoryStore</span></div>
-        <div class="uml-rel"><span style="color:#93bbfd;">Organization</span> <span class="uml-sep">1──1</span> <span style="color:#f9a8d4;">Subscription</span></div>
-        <div class="uml-rel"><span style="color:#86efac;">ApprovalRequest</span> <span class="uml-sep">*──1</span> <span style="color:#67e8f9;">AuditLog</span></div>
-      </div>
-    </div>
-  </div>
+ <!-- Relations -->
+ <div class="uml-relations">
+ <div class="uml-rel"><span style="color:#93bbfd;">Organization</span> <span class="uml-sep">1*</span> <span style="color:#c4b5fd;">Incident</span></div>
+ <div class="uml-rel"><span style="color:#93bbfd;">Organization</span> <span class="uml-sep">1*</span> <span style="color:#fdba74;">ChatSession</span></div>
+ <div class="uml-rel"><span style="color:#c4b5fd;">Incident</span> <span class="uml-sep">*1</span> <span style="color:#f9a8d4;">PolicyRule</span></div>
+ <div class="uml-rel"><span style="color:#c4b5fd;">Incident</span> <span class="uml-sep">1*</span> <span style="color:#86efac;">ApprovalRequest</span></div>
+ <div class="uml-rel"><span style="color:#93bbfd;">Organization</span> <span class="uml-sep">1*</span> <span style="color:#fde047;">MemoryStore</span></div>
+ <div class="uml-rel"><span style="color:#93bbfd;">Organization</span> <span class="uml-sep">11</span> <span style="color:#f9a8d4;">Subscription</span></div>
+ <div class="uml-rel"><span style="color:#86efac;">ApprovalRequest</span> <span class="uml-sep">*1</span> <span style="color:#67e8f9;">AuditLog</span></div>
+ </div>
+ </div>
+ </div>
 
-  <!-- ===== UML 2: Sequence Diagram ===== -->
-  <div class="uml-section">
-    <div class="uml-section-header" style="color:var(--accent-blue);">🔄 UML Sequence Diagram — AI Chat Interaction Flow</div>
-    <div class="uml-section-body">
-      <div class="seq-diagram">
-        <div class="seq-participants">
-          <div class="seq-participant" style="border-color:var(--accent-blue);color:var(--accent-blue);background:rgba(96,165,250,0.08);">👤 User</div>
-          <div class="seq-participant" style="border-color:var(--accent-green);color:var(--accent-green);background:rgba(74,222,128,0.08);">🖥️ Node API</div>
-          <div class="seq-participant" style="border-color:var(--accent-orange);color:var(--accent-orange);background:rgba(251,146,60,0.08);">🧠 Zentom AI</div>
-          <div class="seq-participant" style="border-color:var(--accent-purple);color:var(--accent-purple);background:rgba(167,139,250,0.08);">💾 Memory</div>
-          <div class="seq-participant" style="border-color:var(--accent-cyan);color:var(--accent-cyan);background:rgba(34,211,238,0.08);">🛡️ Policy</div>
-          <div class="seq-participant" style="border-color:var(--accent-pink);color:var(--accent-pink);background:rgba(244,114,182,0.08);">☁️ Salesforce</div>
-        </div>
+ <!-- ===== UML 2: Sequence Diagram ===== -->
+ <div class="uml-section">
+ <div class="uml-section-header" style="color:var(--accent-blue);"> UML Sequence Diagram — AI Chat Interaction Flow</div>
+ <div class="uml-section-body">
+ <div class="seq-diagram">
+ <div class="seq-participants">
+ <div class="seq-participant" style="border-color:var(--accent-blue);color:var(--accent-blue);background:rgba(96,165,250,0.08);"> User</div>
+ <div class="seq-participant" style="border-color:var(--accent-green);color:var(--accent-green);background:rgba(74,222,128,0.08);"> Node API</div>
+ <div class="seq-participant" style="border-color:var(--accent-orange);color:var(--accent-orange);background:rgba(251,146,60,0.08);"> Zentom AI</div>
+ <div class="seq-participant" style="border-color:var(--accent-purple);color:var(--accent-purple);background:rgba(167,139,250,0.08);"> Memory</div>
+ <div class="seq-participant" style="border-color:var(--accent-cyan);color:var(--accent-cyan);background:rgba(34,211,238,0.08);"> Policy</div>
+ <div class="seq-participant" style="border-color:var(--accent-pink);color:var(--accent-pink);background:rgba(244,114,182,0.08);"> Salesforce</div>
+ </div>
 
-        <div class="seq-step">
-          <div class="seq-num" style="background:rgba(96,165,250,0.15);color:var(--accent-blue);">1</div>
-          <span class="seq-from" style="color:var(--accent-blue);">User</span>
-          <span class="seq-arrow">→</span>
-          <span class="seq-to" style="color:var(--accent-green);">Node API</span>
-          <span class="seq-label">POST /api/chat/message</span>
-        </div>
-        <div class="seq-note">Sends message with session context and auth token</div>
+ <div class="seq-step">
+ <div class="seq-num" style="background:rgba(96,165,250,0.15);color:var(--accent-blue);">1</div>
+ <span class="seq-from" style="color:var(--accent-blue);">User</span>
+ <span class="seq-arrow">→</span>
+ <span class="seq-to" style="color:var(--accent-green);">Node API</span>
+ <span class="seq-label">POST /api/chat/message</span>
+ </div>
+ <div class="seq-note">Sends message with session context and auth token</div>
 
-        <div class="seq-step">
-          <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">2</div>
-          <span class="seq-from" style="color:var(--accent-green);">Node API</span>
-          <span class="seq-arrow">→</span>
-          <span class="seq-to" style="color:var(--accent-cyan);">Policy</span>
-          <span class="seq-label">evaluate(message, userRole)</span>
-        </div>
-        <div class="seq-note">Checks content policy, rate limits, and permissions</div>
+ <div class="seq-step">
+ <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">2</div>
+ <span class="seq-from" style="color:var(--accent-green);">Node API</span>
+ <span class="seq-arrow">→</span>
+ <span class="seq-to" style="color:var(--accent-cyan);">Policy</span>
+ <span class="seq-label">evaluate(message, userRole)</span>
+ </div>
+ <div class="seq-note">Checks content policy, rate limits, and permissions</div>
 
-        <div class="seq-step">
-          <div class="seq-num" style="background:rgba(34,211,238,0.15);color:var(--accent-cyan);">3</div>
-          <span class="seq-from" style="color:var(--accent-cyan);">Policy</span>
-          <span class="seq-arrow">→</span>
-          <span class="seq-to" style="color:var(--accent-green);">Node API</span>
-          <span class="seq-label">PolicyResult { allowed: true }</span>
-        </div>
+ <div class="seq-step">
+ <div class="seq-num" style="background:rgba(34,211,238,0.15);color:var(--accent-cyan);">3</div>
+ <span class="seq-from" style="color:var(--accent-cyan);">Policy</span>
+ <span class="seq-arrow">→</span>
+ <span class="seq-to" style="color:var(--accent-green);">Node API</span>
+ <span class="seq-label">PolicyResult { allowed: true }</span>
+ </div>
 
-        <div class="seq-step">
-          <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">4</div>
-          <span class="seq-from" style="color:var(--accent-green);">Node API</span>
-          <span class="seq-arrow">→</span>
-          <span class="seq-to" style="color:var(--accent-purple);">Memory</span>
-          <span class="seq-label">search(orgId, query, topK=5)</span>
-        </div>
-        <div class="seq-note">Retrieves relevant context from vector store (pgvector)</div>
+ <div class="seq-step">
+ <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">4</div>
+ <span class="seq-from" style="color:var(--accent-green);">Node API</span>
+ <span class="seq-arrow">→</span>
+ <span class="seq-to" style="color:var(--accent-purple);">Memory</span>
+ <span class="seq-label">search(orgId, query, topK=5)</span>
+ </div>
+ <div class="seq-note">Retrieves relevant context from vector store (pgvector)</div>
 
-        <div class="seq-step">
-          <div class="seq-num" style="background:rgba(167,139,250,0.15);color:var(--accent-purple);">5</div>
-          <span class="seq-from" style="color:var(--accent-purple);">Memory</span>
-          <span class="seq-arrow">→</span>
-          <span class="seq-to" style="color:var(--accent-green);">Node API</span>
-          <span class="seq-label">contextChunks: List[Memory]</span>
-        </div>
+ <div class="seq-step">
+ <div class="seq-num" style="background:rgba(167,139,250,0.15);color:var(--accent-purple);">5</div>
+ <span class="seq-from" style="color:var(--accent-purple);">Memory</span>
+ <span class="seq-arrow">→</span>
+ <span class="seq-to" style="color:var(--accent-green);">Node API</span>
+ <span class="seq-label">contextChunks: List[Memory]</span>
+ </div>
 
-        <div class="seq-step">
-          <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">6</div>
-          <span class="seq-from" style="color:var(--accent-green);">Node API</span>
-          <span class="seq-arrow">→</span>
-          <span class="seq-to" style="color:var(--accent-orange);">Zentom AI</span>
-          <span class="seq-label">generate(prompt, context, model)</span>
-        </div>
-        <div class="seq-note">Sends enriched prompt with RAG context to AI engine</div>
+ <div class="seq-step">
+ <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">6</div>
+ <span class="seq-from" style="color:var(--accent-green);">Node API</span>
+ <span class="seq-arrow">→</span>
+ <span class="seq-to" style="color:var(--accent-orange);">Zentom AI</span>
+ <span class="seq-label">generate(prompt, context, model)</span>
+ </div>
+ <div class="seq-note">Sends enriched prompt with RAG context to AI engine</div>
 
-        <div class="seq-step">
-          <div class="seq-num" style="background:rgba(251,146,60,0.15);color:var(--accent-orange);">7</div>
-          <span class="seq-from" style="color:var(--accent-orange);">Zentom AI</span>
-          <span class="seq-arrow">→</span>
-          <span class="seq-to" style="color:var(--accent-orange);">Zentom AI</span>
-          <span class="seq-label">streamGenerate() → SSE chunks</span>
-        </div>
-        <div class="seq-note">Streams response tokens via Server-Sent Events</div>
+ <div class="seq-step">
+ <div class="seq-num" style="background:rgba(251,146,60,0.15);color:var(--accent-orange);">7</div>
+ <span class="seq-from" style="color:var(--accent-orange);">Zentom AI</span>
+ <span class="seq-arrow">→</span>
+ <span class="seq-to" style="color:var(--accent-orange);">Zentom AI</span>
+ <span class="seq-label">streamGenerate() → SSE chunks</span>
+ </div>
+ <div class="seq-note">Streams response tokens via Server-Sent Events</div>
 
-        <div class="seq-step">
-          <div class="seq-num" style="background:rgba(251,146,60,0.15);color:var(--accent-orange);">8</div>
-          <span class="seq-from" style="color:var(--accent-orange);">Zentom AI</span>
-          <span class="seq-arrow">→</span>
-          <span class="seq-to" style="color:var(--accent-green);">Node API</span>
-          <span class="seq-label">AIResponse { text, tokens, model }</span>
-        </div>
+ <div class="seq-step">
+ <div class="seq-num" style="background:rgba(251,146,60,0.15);color:var(--accent-orange);">8</div>
+ <span class="seq-from" style="color:var(--accent-orange);">Zentom AI</span>
+ <span class="seq-arrow">→</span>
+ <span class="seq-to" style="color:var(--accent-green);">Node API</span>
+ <span class="seq-label">AIResponse { text, tokens, model }</span>
+ </div>
 
-        <div class="seq-step">
-          <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">9</div>
-          <span class="seq-from" style="color:var(--accent-green);">Node API</span>
-          <span class="seq-arrow">→</span>
-          <span class="seq-to" style="color:var(--accent-purple);">Memory</span>
-          <span class="seq-label">store(orgId, exchange)</span>
-        </div>
-        <div class="seq-note">Persists conversation to memory for future context</div>
+ <div class="seq-step">
+ <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">9</div>
+ <span class="seq-from" style="color:var(--accent-green);">Node API</span>
+ <span class="seq-arrow">→</span>
+ <span class="seq-to" style="color:var(--accent-purple);">Memory</span>
+ <span class="seq-label">store(orgId, exchange)</span>
+ </div>
+ <div class="seq-note">Persists conversation to memory for future context</div>
 
-        <div class="seq-step">
-          <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">10</div>
-          <span class="seq-from" style="color:var(--accent-green);">Node API</span>
-          <span class="seq-arrow">→</span>
-          <span class="seq-to" style="color:var(--accent-pink);">Salesforce</span>
-          <span class="seq-label">logInteraction(sessionId, metadata)</span>
-        </div>
-        <div class="seq-note">Creates AuditLog and updates Incident if linked</div>
+ <div class="seq-step">
+ <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">10</div>
+ <span class="seq-from" style="color:var(--accent-green);">Node API</span>
+ <span class="seq-arrow">→</span>
+ <span class="seq-to" style="color:var(--accent-pink);">Salesforce</span>
+ <span class="seq-label">logInteraction(sessionId, metadata)</span>
+ </div>
+ <div class="seq-note">Creates AuditLog and updates Incident if linked</div>
 
-        <div class="seq-step">
-          <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">11</div>
-          <span class="seq-from" style="color:var(--accent-green);">Node API</span>
-          <span class="seq-arrow">→</span>
-          <span class="seq-to" style="color:var(--accent-blue);">User</span>
-          <span class="seq-label">200 OK { response, sessionId }</span>
-        </div>
-        <div class="seq-note">Returns AI response with streaming support</div>
-      </div>
-    </div>
-  </div>
+ <div class="seq-step">
+ <div class="seq-num" style="background:rgba(74,222,128,0.15);color:var(--accent-green);">11</div>
+ <span class="seq-from" style="color:var(--accent-green);">Node API</span>
+ <span class="seq-arrow">→</span>
+ <span class="seq-to" style="color:var(--accent-blue);">User</span>
+ <span class="seq-label">200 OK { response, sessionId }</span>
+ </div>
+ <div class="seq-note">Returns AI response with streaming support</div>
+ </div>
+ </div>
+ </div>
 
-  <!-- ===== UML 3: Component Diagram ===== -->
-  <div class="uml-section">
-    <div class="uml-section-header" style="color:var(--accent-green);">🧩 UML Component Diagram — System Components</div>
-    <div class="uml-section-body">
-      <div class="comp-grid">
+ <!-- ===== UML 3: Component Diagram ===== -->
+ <div class="uml-section">
+ <div class="uml-section-header" style="color:var(--accent-green);"> UML Component Diagram — System Components</div>
+ <div class="uml-section-body">
+ <div class="comp-grid">
 
-        <!-- Frontend Layer -->
-        <div class="comp-group">
-          <div class="comp-group-title" style="color:var(--accent-blue);">🌐 Frontend Layer</div>
-          <div class="comp-list">
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-blue);"></div><span class="comp-name">Marketing Site</span><span class="comp-tag">Next.js</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-blue);"></div><span class="comp-name">TomCodeX Site</span><span class="comp-tag">Next.js</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-blue);"></div><span class="comp-name">Dev Dashboard</span><span class="comp-tag">HTML/JS</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-blue);"></div><span class="comp-name">LWC Components</span><span class="comp-tag">Salesforce</span></div>
-          </div>
-        </div>
+ <!-- Frontend Layer -->
+ <div class="comp-group">
+ <div class="comp-group-title" style="color:var(--accent-blue);"> Frontend Layer</div>
+ <div class="comp-list">
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-blue);"></div><span class="comp-name">Marketing Site</span><span class="comp-tag">Next.js</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-blue);"></div><span class="comp-name">TomCodeX Site</span><span class="comp-tag">Next.js</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-blue);"></div><span class="comp-name">Dev Dashboard</span><span class="comp-tag">HTML/JS</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-blue);"></div><span class="comp-name">LWC Components</span><span class="comp-tag">Salesforce</span></div>
+ </div>
+ </div>
 
-        <!-- API Gateway -->
-        <div class="comp-group">
-          <div class="comp-group-title" style="color:var(--accent-green);">🖥️ API Gateway</div>
-          <div class="comp-list">
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-green);"></div><span class="comp-name">Express Server</span><span class="comp-tag">Node.js</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-green);"></div><span class="comp-name">Auth Middleware</span><span class="comp-tag">JWT</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-green);"></div><span class="comp-name">Rate Limiter</span><span class="comp-tag">Redis</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-green);"></div><span class="comp-name">Route Handler</span><span class="comp-tag">REST</span></div>
-          </div>
-        </div>
+ <!-- API Gateway -->
+ <div class="comp-group">
+ <div class="comp-group-title" style="color:var(--accent-green);"> API Gateway</div>
+ <div class="comp-list">
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-green);"></div><span class="comp-name">Express Server</span><span class="comp-tag">Node.js</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-green);"></div><span class="comp-name">Auth Middleware</span><span class="comp-tag">JWT</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-green);"></div><span class="comp-name">Rate Limiter</span><span class="comp-tag">Redis</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-green);"></div><span class="comp-name">Route Handler</span><span class="comp-tag">REST</span></div>
+ </div>
+ </div>
 
-        <!-- AI Engine -->
-        <div class="comp-group">
-          <div class="comp-group-title" style="color:var(--accent-orange);">🧠 AI Engine</div>
-          <div class="comp-list">
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-orange);"></div><span class="comp-name">Zentom Core</span><span class="comp-tag">FastAPI</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-orange);"></div><span class="comp-name">Memory Engine</span><span class="comp-tag">pgvector</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-orange);"></div><span class="comp-name">Policy Engine</span><span class="comp-tag">Rules</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-orange);"></div><span class="comp-name">Model Router</span><span class="comp-tag">Multi-LLM</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-orange);"></div><span class="comp-name">Chat Engine</span><span class="comp-tag">Streaming</span></div>
-          </div>
-        </div>
+ <!-- AI Engine -->
+ <div class="comp-group">
+ <div class="comp-group-title" style="color:var(--accent-orange);"> AI Engine</div>
+ <div class="comp-list">
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-orange);"></div><span class="comp-name">Zentom Core</span><span class="comp-tag">FastAPI</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-orange);"></div><span class="comp-name">Memory Engine</span><span class="comp-tag">pgvector</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-orange);"></div><span class="comp-name">Policy Engine</span><span class="comp-tag">Rules</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-orange);"></div><span class="comp-name">Model Router</span><span class="comp-tag">Multi-LLM</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-orange);"></div><span class="comp-name">Chat Engine</span><span class="comp-tag">Streaming</span></div>
+ </div>
+ </div>
 
-        <!-- Salesforce -->
-        <div class="comp-group">
-          <div class="comp-group-title" style="color:var(--accent-pink);">☁️ Salesforce Platform</div>
-          <div class="comp-list">
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-pink);"></div><span class="comp-name">Apex Controllers</span><span class="comp-tag">279 classes</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-pink);"></div><span class="comp-name">Custom Objects</span><span class="comp-tag">26 objects</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-pink);"></div><span class="comp-name">Triggers</span><span class="comp-tag">7 triggers</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-pink);"></div><span class="comp-name">Permission Sets</span><span class="comp-tag">FLS</span></div>
-          </div>
-        </div>
+ <!-- Salesforce -->
+ <div class="comp-group">
+ <div class="comp-group-title" style="color:var(--accent-pink);"> Salesforce Platform</div>
+ <div class="comp-list">
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-pink);"></div><span class="comp-name">Apex Controllers</span><span class="comp-tag">279 classes</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-pink);"></div><span class="comp-name">Custom Objects</span><span class="comp-tag">26 objects</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-pink);"></div><span class="comp-name">Triggers</span><span class="comp-tag">7 triggers</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-pink);"></div><span class="comp-name">Permission Sets</span><span class="comp-tag">FLS</span></div>
+ </div>
+ </div>
 
-        <!-- Data Layer -->
-        <div class="comp-group">
-          <div class="comp-group-title" style="color:var(--accent-cyan);">💾 Data Layer</div>
-          <div class="comp-list">
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-cyan);"></div><span class="comp-name">PostgreSQL</span><span class="comp-tag">pgvector</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-cyan);"></div><span class="comp-name">Redis Cache</span><span class="comp-tag">Celery</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-cyan);"></div><span class="comp-name">Salesforce DB</span><span class="comp-tag">SOQL</span></div>
-          </div>
-        </div>
+ <!-- Data Layer -->
+ <div class="comp-group">
+ <div class="comp-group-title" style="color:var(--accent-cyan);"> Data Layer</div>
+ <div class="comp-list">
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-cyan);"></div><span class="comp-name">PostgreSQL</span><span class="comp-tag">pgvector</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-cyan);"></div><span class="comp-name">Redis Cache</span><span class="comp-tag">Celery</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-cyan);"></div><span class="comp-name">Salesforce DB</span><span class="comp-tag">SOQL</span></div>
+ </div>
+ </div>
 
-        <!-- Infrastructure -->
-        <div class="comp-group">
-          <div class="comp-group-title" style="color:var(--accent-yellow);">⚙️ Infrastructure</div>
-          <div class="comp-list">
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-yellow);"></div><span class="comp-name">Vercel</span><span class="comp-tag">Edge CDN</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-yellow);"></div><span class="comp-name">Heroku</span><span class="comp-tag">Node.js</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-yellow);"></div><span class="comp-name">Render</span><span class="comp-tag">AI Engine</span></div>
-            <div class="comp-item"><div class="comp-dot" style="background:var(--accent-yellow);"></div><span class="comp-name">Docker</span><span class="comp-tag">Local</span></div>
-          </div>
-        </div>
+ <!-- Infrastructure -->
+ <div class="comp-group">
+ <div class="comp-group-title" style="color:var(--accent-yellow);"> Infrastructure</div>
+ <div class="comp-list">
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-yellow);"></div><span class="comp-name">Vercel</span><span class="comp-tag">Edge CDN</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-yellow);"></div><span class="comp-name">Heroku</span><span class="comp-tag">Node.js</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-yellow);"></div><span class="comp-name">Render</span><span class="comp-tag">AI Engine</span></div>
+ <div class="comp-item"><div class="comp-dot" style="background:var(--accent-yellow);"></div><span class="comp-name">Docker</span><span class="comp-tag">Local</span></div>
+ </div>
+ </div>
 
-      </div>
-    </div>
-  </div>
+ </div>
+ </div>
+ </div>
 
-  <!-- ===== UML 4: ER Diagram ===== -->
-  <div class="uml-section">
-    <div class="uml-section-header" style="color:var(--accent-orange);">🗄️ ER Diagram — Database Schema</div>
-    <div class="uml-section-body">
-      <div class="er-grid">
+ <!-- ===== UML 4: ER Diagram ===== -->
+ <div class="uml-section">
+ <div class="uml-section-header" style="color:var(--accent-orange);"> ER Diagram — Database Schema</div>
+ <div class="uml-section-body">
+ <div class="er-grid">
 
-        <!-- organizations -->
-        <div class="er-table">
-          <div class="er-table-name" style="color:var(--accent-blue);">📘 organizations</div>
-          <div class="er-col"><span class="er-pk">🔑 id</span><span class="er-type">UUID</span></div>
-          <div class="er-col"><span>name</span><span class="er-type">VARCHAR(255)</span></div>
-          <div class="er-col"><span>sf_org_id</span><span class="er-type">VARCHAR(18)</span></div>
-          <div class="er-col"><span>plan</span><span class="er-type">ENUM</span></div>
-          <div class="er-col"><span>settings</span><span class="er-type">JSONB</span></div>
-          <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
-        </div>
+ <!-- organizations -->
+ <div class="er-table">
+ <div class="er-table-name" style="color:var(--accent-blue);"> organizations</div>
+ <div class="er-col"><span class="er-pk"> id</span><span class="er-type">UUID</span></div>
+ <div class="er-col"><span>name</span><span class="er-type">VARCHAR(255)</span></div>
+ <div class="er-col"><span>sf_org_id</span><span class="er-type">VARCHAR(18)</span></div>
+ <div class="er-col"><span>plan</span><span class="er-type">ENUM</span></div>
+ <div class="er-col"><span>settings</span><span class="er-type">JSONB</span></div>
+ <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
+ </div>
 
-        <!-- incidents -->
-        <div class="er-table">
-          <div class="er-table-name" style="color:var(--accent-purple);">📘 incidents</div>
-          <div class="er-col"><span class="er-pk">🔑 id</span><span class="er-type">UUID</span></div>
-          <div class="er-col"><span class="er-fk">🔗 org_id</span><span class="er-type">UUID → orgs</span></div>
-          <div class="er-col"><span>title</span><span class="er-type">VARCHAR(500)</span></div>
-          <div class="er-col"><span>severity</span><span class="er-type">ENUM</span></div>
-          <div class="er-col"><span>status</span><span class="er-type">ENUM</span></div>
-          <div class="er-col"><span>source</span><span class="er-type">VARCHAR(100)</span></div>
-          <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
-        </div>
+ <!-- incidents -->
+ <div class="er-table">
+ <div class="er-table-name" style="color:var(--accent-purple);"> incidents</div>
+ <div class="er-col"><span class="er-pk"> id</span><span class="er-type">UUID</span></div>
+ <div class="er-col"><span class="er-fk"> org_id</span><span class="er-type">UUID → orgs</span></div>
+ <div class="er-col"><span>title</span><span class="er-type">VARCHAR(500)</span></div>
+ <div class="er-col"><span>severity</span><span class="er-type">ENUM</span></div>
+ <div class="er-col"><span>status</span><span class="er-type">ENUM</span></div>
+ <div class="er-col"><span>source</span><span class="er-type">VARCHAR(100)</span></div>
+ <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
+ </div>
 
-        <!-- chat_sessions -->
-        <div class="er-table">
-          <div class="er-table-name" style="color:var(--accent-orange);">📘 chat_sessions</div>
-          <div class="er-col"><span class="er-pk">🔑 id</span><span class="er-type">UUID</span></div>
-          <div class="er-col"><span class="er-fk">🔗 org_id</span><span class="er-type">UUID → orgs</span></div>
-          <div class="er-col"><span class="er-fk">🔗 user_id</span><span class="er-type">UUID → users</span></div>
-          <div class="er-col"><span>model</span><span class="er-type">VARCHAR(50)</span></div>
-          <div class="er-col"><span>context</span><span class="er-type">JSONB</span></div>
-          <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
-        </div>
+ <!-- chat_sessions -->
+ <div class="er-table">
+ <div class="er-table-name" style="color:var(--accent-orange);"> chat_sessions</div>
+ <div class="er-col"><span class="er-pk"> id</span><span class="er-type">UUID</span></div>
+ <div class="er-col"><span class="er-fk"> org_id</span><span class="er-type">UUID → orgs</span></div>
+ <div class="er-col"><span class="er-fk"> user_id</span><span class="er-type">UUID → users</span></div>
+ <div class="er-col"><span>model</span><span class="er-type">VARCHAR(50)</span></div>
+ <div class="er-col"><span>context</span><span class="er-type">JSONB</span></div>
+ <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
+ </div>
 
-        <!-- chat_messages -->
-        <div class="er-table">
-          <div class="er-table-name" style="color:var(--accent-green);">📘 chat_messages</div>
-          <div class="er-col"><span class="er-pk">🔑 id</span><span class="er-type">UUID</span></div>
-          <div class="er-col"><span class="er-fk">🔗 session_id</span><span class="er-type">UUID → sessions</span></div>
-          <div class="er-col"><span>role</span><span class="er-type">ENUM</span></div>
-          <div class="er-col"><span>content</span><span class="er-type">TEXT</span></div>
-          <div class="er-col"><span>tokens</span><span class="er-type">INT</span></div>
-          <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
-        </div>
+ <!-- chat_messages -->
+ <div class="er-table">
+ <div class="er-table-name" style="color:var(--accent-green);"> chat_messages</div>
+ <div class="er-col"><span class="er-pk"> id</span><span class="er-type">UUID</span></div>
+ <div class="er-col"><span class="er-fk"> session_id</span><span class="er-type">UUID → sessions</span></div>
+ <div class="er-col"><span>role</span><span class="er-type">ENUM</span></div>
+ <div class="er-col"><span>content</span><span class="er-type">TEXT</span></div>
+ <div class="er-col"><span>tokens</span><span class="er-type">INT</span></div>
+ <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
+ </div>
 
-        <!-- policy_rules -->
-        <div class="er-table">
-          <div class="er-table-name" style="color:var(--accent-pink);">📘 policy_rules</div>
-          <div class="er-col"><span class="er-pk">🔑 id</span><span class="er-type">UUID</span></div>
-          <div class="er-col"><span class="er-fk">🔗 org_id</span><span class="er-type">UUID → orgs</span></div>
-          <div class="er-col"><span>name</span><span class="er-type">VARCHAR(255)</span></div>
-          <div class="er-col"><span>condition</span><span class="er-type">JSONB</span></div>
-          <div class="er-col"><span>action</span><span class="er-type">ENUM</span></div>
-          <div class="er-col"><span>priority</span><span class="er-type">INT</span></div>
-        </div>
+ <!-- policy_rules -->
+ <div class="er-table">
+ <div class="er-table-name" style="color:var(--accent-pink);"> policy_rules</div>
+ <div class="er-col"><span class="er-pk"> id</span><span class="er-type">UUID</span></div>
+ <div class="er-col"><span class="er-fk"> org_id</span><span class="er-type">UUID → orgs</span></div>
+ <div class="er-col"><span>name</span><span class="er-type">VARCHAR(255)</span></div>
+ <div class="er-col"><span>condition</span><span class="er-type">JSONB</span></div>
+ <div class="er-col"><span>action</span><span class="er-type">ENUM</span></div>
+ <div class="er-col"><span>priority</span><span class="er-type">INT</span></div>
+ </div>
 
-        <!-- approval_requests -->
-        <div class="er-table">
-          <div class="er-table-name" style="color:var(--accent-cyan);">📘 approval_requests</div>
-          <div class="er-col"><span class="er-pk">🔑 id</span><span class="er-type">UUID</span></div>
-          <div class="er-col"><span class="er-fk">🔗 incident_id</span><span class="er-type">UUID → incidents</span></div>
-          <div class="er-col"><span>requested_action</span><span class="er-type">VARCHAR(255)</span></div>
-          <div class="er-col"><span>status</span><span class="er-type">ENUM</span></div>
-          <div class="er-col"><span>approver</span><span class="er-type">VARCHAR(255)</span></div>
-          <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
-        </div>
+ <!-- approval_requests -->
+ <div class="er-table">
+ <div class="er-table-name" style="color:var(--accent-cyan);"> approval_requests</div>
+ <div class="er-col"><span class="er-pk"> id</span><span class="er-type">UUID</span></div>
+ <div class="er-col"><span class="er-fk"> incident_id</span><span class="er-type">UUID → incidents</span></div>
+ <div class="er-col"><span>requested_action</span><span class="er-type">VARCHAR(255)</span></div>
+ <div class="er-col"><span>status</span><span class="er-type">ENUM</span></div>
+ <div class="er-col"><span>approver</span><span class="er-type">VARCHAR(255)</span></div>
+ <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
+ </div>
 
-        <!-- memory_store -->
-        <div class="er-table">
-          <div class="er-table-name" style="color:var(--accent-yellow);">📘 memory_store</div>
-          <div class="er-col"><span class="er-pk">🔑 id</span><span class="er-type">UUID</span></div>
-          <div class="er-col"><span class="er-fk">🔗 org_id</span><span class="er-type">UUID → orgs</span></div>
-          <div class="er-col"><span>content</span><span class="er-type">TEXT</span></div>
-          <div class="er-col"><span>embedding</span><span class="er-type">VECTOR(384)</span></div>
-          <div class="er-col"><span>tags</span><span class="er-type">TEXT[]</span></div>
-          <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
-        </div>
+ <!-- memory_store -->
+ <div class="er-table">
+ <div class="er-table-name" style="color:var(--accent-yellow);"> memory_store</div>
+ <div class="er-col"><span class="er-pk"> id</span><span class="er-type">UUID</span></div>
+ <div class="er-col"><span class="er-fk"> org_id</span><span class="er-type">UUID → orgs</span></div>
+ <div class="er-col"><span>content</span><span class="er-type">TEXT</span></div>
+ <div class="er-col"><span>embedding</span><span class="er-type">VECTOR(384)</span></div>
+ <div class="er-col"><span>tags</span><span class="er-type">TEXT[]</span></div>
+ <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
+ </div>
 
-        <!-- subscriptions -->
-        <div class="er-table">
-          <div class="er-table-name" style="color:var(--accent-red);">📘 subscriptions</div>
-          <div class="er-col"><span class="er-pk">🔑 id</span><span class="er-type">UUID</span></div>
-          <div class="er-col"><span class="er-fk">🔗 org_id</span><span class="er-type">UUID → orgs</span></div>
-          <div class="er-col"><span>plan</span><span class="er-type">ENUM</span></div>
-          <div class="er-col"><span>status</span><span class="er-type">ENUM</span></div>
-          <div class="er-col"><span>expires_at</span><span class="er-type">TIMESTAMP</span></div>
-          <div class="er-col"><span>stripe_id</span><span class="er-type">VARCHAR(255)</span></div>
-        </div>
+ <!-- subscriptions -->
+ <div class="er-table">
+ <div class="er-table-name" style="color:var(--accent-red);"> subscriptions</div>
+ <div class="er-col"><span class="er-pk"> id</span><span class="er-type">UUID</span></div>
+ <div class="er-col"><span class="er-fk"> org_id</span><span class="er-type">UUID → orgs</span></div>
+ <div class="er-col"><span>plan</span><span class="er-type">ENUM</span></div>
+ <div class="er-col"><span>status</span><span class="er-type">ENUM</span></div>
+ <div class="er-col"><span>expires_at</span><span class="er-type">TIMESTAMP</span></div>
+ <div class="er-col"><span>stripe_id</span><span class="er-type">VARCHAR(255)</span></div>
+ </div>
 
-        <!-- audit_logs -->
-        <div class="er-table">
-          <div class="er-table-name" style="color:var(--text-mid);">📘 audit_logs</div>
-          <div class="er-col"><span class="er-pk">🔑 id</span><span class="er-type">UUID</span></div>
-          <div class="er-col"><span class="er-fk">🔗 org_id</span><span class="er-type">UUID → orgs</span></div>
-          <div class="er-col"><span>action</span><span class="er-type">VARCHAR(100)</span></div>
-          <div class="er-col"><span>actor</span><span class="er-type">VARCHAR(255)</span></div>
-          <div class="er-col"><span>metadata</span><span class="er-type">JSONB</span></div>
-          <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
-        </div>
+ <!-- audit_logs -->
+ <div class="er-table">
+ <div class="er-table-name" style="color:var(--text-mid);"> audit_logs</div>
+ <div class="er-col"><span class="er-pk"> id</span><span class="er-type">UUID</span></div>
+ <div class="er-col"><span class="er-fk"> org_id</span><span class="er-type">UUID → orgs</span></div>
+ <div class="er-col"><span>action</span><span class="er-type">VARCHAR(100)</span></div>
+ <div class="er-col"><span>actor</span><span class="er-type">VARCHAR(255)</span></div>
+ <div class="er-col"><span>metadata</span><span class="er-type">JSONB</span></div>
+ <div class="er-col"><span>created_at</span><span class="er-type">TIMESTAMP</span></div>
+ </div>
 
-      </div>
-    </div>
-  </div>
+ </div>
+ </div>
+ </div>
 
 </div>
 </div><!-- end page-uml -->
 
 <!-- Footer -->
 <div style="text-align:center;padding:24px;color:#475569;font-size:0.7rem;border-top:1px solid var(--border);margin-top:12px;">
-  TomCodeX Inc · Developer Dashboard · Real-time system monitoring
+ TomCodeX Inc · Developer Dashboard · Real-time system monitoring
 </div>
 
 <!-- Data + Rendering (inline for file:// compatibility) -->
 <script>
-// ── DATA ──────────────────────────────────────────────────────────────────────
+// DATA 
 const D = {
-  systemStatus: [
-    {name:'Salesforce',status:'online',detail:'API 57.0 \u00b7 99.9% uptime'},
-    {name:'Node.js API',status:'online',detail:'Express v4 \u00b7 Port 3000'},
-    {name:'Zentom AI',status:'online',detail:'FastAPI \u00b7 Port 8000'},
-    {name:'Marketing Site',status:'online',detail:'Vercel \u00b7 Edge CDN'},
-    {name:'TomCodeX Site',status:'online',detail:'Vercel \u00b7 Edge CDN'},
-    {name:'V2 Microservices',status:'building',detail:'Docker \u00b7 In Dev'},
-    {name:'PostgreSQL',status:'online',detail:'pgvector \u00b7 Port 5432'},
-    {name:'Redis',status:'warning',detail:'Celery Broker \u00b7 87% mem'}
-  ],
-  keyMetrics: [
-    {label:'Apex Classes',value:279,color:'var(--accent-purple)',change:'+12 this month',changeType:'up'},
-    {label:'Custom Objects',value:26,color:'var(--accent-blue)',change:'Stable',changeType:'neutral'},
-    {label:'LWC Components',value:32,color:'var(--accent-cyan)',change:'+5 this month',changeType:'up'},
-    {label:'API Endpoints',value:48,color:'var(--accent-green)',change:'+8 this month',changeType:'up'},
-    {label:'AI Models',value:6,color:'var(--accent-orange)',change:'+2 this month',changeType:'up'},
-    {label:'Open Issues',value:14,color:'var(--accent-red)',change:'-3 this week',changeType:'down'}
-  ],
-  apiChart: {
-    peak:'12.4K req/hr',trend:'\u2191 18% vs last week',trendType:'up',
-    pts:[45,38,40,32,28,35,22,18,25,15,20,12,18,10,14]
-  },
-  codebase: [
-    {name:'Apex',pct:38,grad:'linear-gradient(90deg,#8b5cf6,#a78bfa)',lc:'#c4b5fd'},
-    {name:'JavaScript',pct:24,grad:'linear-gradient(90deg,#22c55e,#4ade80)',lc:'#86efac'},
-    {name:'Python',pct:18,grad:'linear-gradient(90deg,#f97316,#fb923c)',lc:'#fdba74'},
-    {name:'TypeScript',pct:10,grad:'linear-gradient(90deg,#3b82f6,#60a5fa)',lc:'#93bbfd'},
-    {name:'HTML/CSS',pct:7,grad:'linear-gradient(90deg,#eab308,#facc15)',lc:'#fde047'},
-    {name:'Other',pct:3,grad:'linear-gradient(90deg,#06b6d4,#22d3ee)',lc:'#67e8f9'}
-  ],
-  codeStats: {files:142,lines:'48.2K',commits:847},
-  envs: [
-    {name:'Production',cls:'env-prod'},
-    {name:'Staging',cls:'env-staging'},
-    {name:'Development',cls:'env-dev'},
-    {name:'Local',cls:'env-local'}
-  ],
-  deployTargets: ['Vercel (2 projects)','Heroku (Node.js)','Render (AI Engine)','SFDX (Salesforce)','Docker (Local)'],
-  aiModels: [
-    {name:'DeepSeek Chat',detail:'Primary \u00b7 1.3B params',status:'Active',sc:'var(--accent-green)',dc:'var(--accent-green)',anim:true,del:'0s'},
-    {name:'Groq Llama3',detail:'Fast inference \u00b7 70B',status:'Active',sc:'var(--accent-green)',dc:'var(--accent-green)',anim:true,del:'0.5s'},
-    {name:'Ollama (Local)',detail:'Offline \u00b7 llama3.2',status:'Standby',sc:'var(--accent-yellow)',dc:'var(--accent-yellow)',anim:false,del:'0s'},
-    {name:'Embedding Model',detail:'pgvector \u00b7 all-MiniLM-L6',status:'Active',sc:'var(--accent-green)',dc:'var(--accent-green)',anim:true,del:'1s'}
-  ],
-  deploys: [
-    {time:'2m ago',msg:'\u2705 Salesforce metadata deployed',detail:'279 Apex classes, 32 LWC, 7 triggers \u00b7 SFDX push',type:'success'},
-    {time:'18m ago',msg:'\u2705 Marketing site updated',detail:'Vercel auto-deploy from main \u00b7 Build 3.2s',type:'success'},
-    {time:'1h ago',msg:'\ud83d\udd04 Zentom AI engine restarted',detail:'New DeepSeek config \u00b7 FastAPI reload',type:'info'},
-    {time:'3h ago',msg:'\u26a0\ufe0f Redis memory warning',detail:'Celery broker at 87% memory \u00b7 Consider scaling',type:'warning'},
-    {time:'5h ago',msg:'\u2705 Node.js API v2.4.1 deployed',detail:'Billing webhooks fix \u00b7 Heroku release',type:'success'},
-    {time:'8h ago',msg:'\u274c Docker build failed (zentom-policy-engine)',detail:'Dependency conflict \u00b7 Resolved in commit a3f2d1',type:'error'}
-  ],
-  activity: [
-    {icon:'\u2699\ufe0f',bg:'rgba(139,92,246,0.15)',ic:'#c4b5fd',svc:'Apex',txt:'New IncidentController methods added',t:'5m ago'},
-    {icon:'\ud83d\udda5\ufe0f',bg:'rgba(34,197,94,0.15)',ic:'#86efac',svc:'Node.js',txt:'Stripe webhook handler updated',t:'12m ago'},
-    {icon:'\ud83e\udde0',bg:'rgba(249,115,22,0.15)',ic:'#fdba74',svc:'Zentom AI',txt:'Memory engine context window expanded',t:'25m ago'},
-    {icon:'\ud83c\udf10',bg:'rgba(96,165,250,0.15)',ic:'#93bbfd',svc:'Website',txt:'Pricing page updated for Q2',t:'1h ago'},
-    {icon:'\u2601\ufe0f',bg:'rgba(236,72,153,0.15)',ic:'#f9a8d4',svc:'Salesforce',txt:'Permission sets patched for FLS',t:'2h ago'},
-    {icon:'\ud83d\udc33',bg:'rgba(6,182,212,0.15)',ic:'#67e8f9',svc:'Docker',txt:'zentom-api image rebuilt',t:'3h ago'},
-    {icon:'\ud83d\udce6',bg:'rgba(234,179,8,0.15)',ic:'#fde047',svc:'Packages',txt:'shared-types v2.1.0 published',t:'4h ago'},
-    {icon:'\ud83d\udd12',bg:'rgba(248,113,113,0.15)',ic:'#f87171',svc:'Security',txt:'API rate limiting tightened',t:'6h ago'}
-  ]
+ systemStatus: [
+ {name:'Salesforce',status:'online',detail:'API 57.0 \u00b7 99.9% uptime'},
+ {name:'Node.js API',status:'online',detail:'Express v4 \u00b7 Port 3000'},
+ {name:'Zentom AI',status:'online',detail:'FastAPI \u00b7 Port 8000'},
+ {name:'Marketing Site',status:'online',detail:'Vercel \u00b7 Edge CDN'},
+ {name:'TomCodeX Site',status:'online',detail:'Vercel \u00b7 Edge CDN'},
+ {name:'V2 Microservices',status:'building',detail:'Docker \u00b7 In Dev'},
+ {name:'PostgreSQL',status:'online',detail:'pgvector \u00b7 Port 5432'},
+ {name:'Redis',status:'warning',detail:'Celery Broker \u00b7 87% mem'}
+ ],
+ keyMetrics: [
+ {label:'Apex Classes',value:279,color:'var(--accent-purple)',change:'+12 this month',changeType:'up'},
+ {label:'Custom Objects',value:26,color:'var(--accent-blue)',change:'Stable',changeType:'neutral'},
+ {label:'LWC Components',value:32,color:'var(--accent-cyan)',change:'+5 this month',changeType:'up'},
+ {label:'API Endpoints',value:48,color:'var(--accent-green)',change:'+8 this month',changeType:'up'},
+ {label:'AI Models',value:6,color:'var(--accent-orange)',change:'+2 this month',changeType:'up'},
+ {label:'Open Issues',value:14,color:'var(--accent-red)',change:'-3 this week',changeType:'down'}
+ ],
+ apiChart: {
+ peak:'12.4K req/hr',trend:'\u2191 18% vs last week',trendType:'up',
+ pts:[45,38,40,32,28,35,22,18,25,15,20,12,18,10,14]
+ },
+ codebase: [
+ {name:'Apex',pct:38,grad:'linear-gradient(90deg,#8b5cf6,#a78bfa)',lc:'#c4b5fd'},
+ {name:'JavaScript',pct:24,grad:'linear-gradient(90deg,#22c55e,#4ade80)',lc:'#86efac'},
+ {name:'Python',pct:18,grad:'linear-gradient(90deg,#f97316,#fb923c)',lc:'#fdba74'},
+ {name:'TypeScript',pct:10,grad:'linear-gradient(90deg,#3b82f6,#60a5fa)',lc:'#93bbfd'},
+ {name:'HTML/CSS',pct:7,grad:'linear-gradient(90deg,#eab308,#facc15)',lc:'#fde047'},
+ {name:'Other',pct:3,grad:'linear-gradient(90deg,#06b6d4,#22d3ee)',lc:'#67e8f9'}
+ ],
+ codeStats: {files:142,lines:'48.2K',commits:847},
+ envs: [
+ {name:'Production',cls:'env-prod'},
+ {name:'Staging',cls:'env-staging'},
+ {name:'Development',cls:'env-dev'},
+ {name:'Local',cls:'env-local'}
+ ],
+ deployTargets: ['Vercel (2 projects)','Heroku (Node.js)','Render (AI Engine)','SFDX (Salesforce)','Docker (Local)'],
+ aiModels: [
+ {name:'DeepSeek Chat',detail:'Primary \u00b7 1.3B params',status:'Active',sc:'var(--accent-green)',dc:'var(--accent-green)',anim:true,del:'0s'},
+ {name:'Groq Llama3',detail:'Fast inference \u00b7 70B',status:'Active',sc:'var(--accent-green)',dc:'var(--accent-green)',anim:true,del:'0.5s'},
+ {name:'Ollama (Local)',detail:'Offline \u00b7 llama3.2',status:'Standby',sc:'var(--accent-yellow)',dc:'var(--accent-yellow)',anim:false,del:'0s'},
+ {name:'Embedding Model',detail:'pgvector \u00b7 all-MiniLM-L6',status:'Active',sc:'var(--accent-green)',dc:'var(--accent-green)',anim:true,del:'1s'}
+ ],
+ deploys: [
+ {time:'2m ago',msg:'\u2705 Salesforce metadata deployed',detail:'279 Apex classes, 32 LWC, 7 triggers \u00b7 SFDX push',type:'success'},
+ {time:'18m ago',msg:'\u2705 Marketing site updated',detail:'Vercel auto-deploy from main \u00b7 Build 3.2s',type:'success'},
+ {time:'1h ago',msg:'\ud83d\udd04 Zentom AI engine restarted',detail:'New DeepSeek config \u00b7 FastAPI reload',type:'info'},
+ {time:'3h ago',msg:'\u26a0\ufe0f Redis memory warning',detail:'Celery broker at 87% memory \u00b7 Consider scaling',type:'warning'},
+ {time:'5h ago',msg:'\u2705 Node.js API v2.4.1 deployed',detail:'Billing webhooks fix \u00b7 Heroku release',type:'success'},
+ {time:'8h ago',msg:'\u274c Docker build failed (zentom-policy-engine)',detail:'Dependency conflict \u00b7 Resolved in commit a3f2d1',type:'error'}
+ ],
+ activity: [
+ {icon:'\u2699\ufe0f',bg:'rgba(139,92,246,0.15)',ic:'#c4b5fd',svc:'Apex',txt:'New IncidentController methods added',t:'5m ago'},
+ {icon:'\ud83d\udda5\ufe0f',bg:'rgba(34,197,94,0.15)',ic:'#86efac',svc:'Node.js',txt:'Stripe webhook handler updated',t:'12m ago'},
+ {icon:'\ud83e\udde0',bg:'rgba(249,115,22,0.15)',ic:'#fdba74',svc:'Zentom AI',txt:'Memory engine context window expanded',t:'25m ago'},
+ {icon:'\ud83c\udf10',bg:'rgba(96,165,250,0.15)',ic:'#93bbfd',svc:'Website',txt:'Pricing page updated for Q2',t:'1h ago'},
+ {icon:'\u2601\ufe0f',bg:'rgba(236,72,153,0.15)',ic:'#f9a8d4',svc:'Salesforce',txt:'Permission sets patched for FLS',t:'2h ago'},
+ {icon:'\ud83d\udc33',bg:'rgba(6,182,212,0.15)',ic:'#67e8f9',svc:'Docker',txt:'zentom-api image rebuilt',t:'3h ago'},
+ {icon:'\ud83d\udce6',bg:'rgba(234,179,8,0.15)',ic:'#fde047',svc:'Packages',txt:'shared-types v2.1.0 published',t:'4h ago'},
+ {icon:'\ud83d\udd12',bg:'rgba(248,113,113,0.15)',ic:'#f87171',svc:'Security',txt:'API rate limiting tightened',t:'6h ago'}
+ ]
 };
 
-// ── RENDER ─────────────────────────────────────────────────────────────────────
+// RENDER 
 function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 
 // System Status
 (function(){
-  var g=document.getElementById('sync-status-grid');
-  if(!g)return;
-  g.innerHTML=D.systemStatus.map(function(s){
-    return '<div class="status-item"><div class="status-dot '+s.status+'"></div><div class="status-name">'+esc(s.name)+'</div><div class="status-detail">'+esc(s.detail)+'</div></div>';
-  }).join('');
+ var g=document.getElementById('sync-status-grid');
+ if(!g)return;
+ g.innerHTML=D.systemStatus.map(function(s){
+ return '<div class="status-item"><div class="status-dot '+s.status+'"></div><div class="status-name">'+esc(s.name)+'</div><div class="status-detail">'+esc(s.detail)+'</div></div>';
+ }).join('');
 })();
 
 // Key Metrics
 (function(){
-  var c=document.getElementById('sync-metrics');
-  if(!c)return;
-  var r1=D.keyMetrics.slice(0,3),r2=D.keyMetrics.slice(3);
-  c.innerHTML='<div class="metric-row">'+r1.map(function(m){return '<div class="metric"><div class="metric-label">'+esc(m.label)+'</div><div class="metric-value" style="color:'+m.color+';" data-target="'+m.value+'">0</div><div class="metric-change '+m.changeType+'">'+esc(m.change)+'</div></div>';}).join('')+'</div><div class="metric-row" style="margin-top:10px;">'+r2.map(function(m){return '<div class="metric"><div class="metric-label">'+esc(m.label)+'</div><div class="metric-value" style="color:'+m.color+';" data-target="'+m.value+'">0</div><div class="metric-change '+m.changeType+'">'+esc(m.change)+'</div></div>';}).join('')+'</div>';
-  // Counter animation
-  document.querySelectorAll('.metric-value[data-target]').forEach(function(el){
-    var target=parseInt(el.dataset.target),dur=1200,start=performance.now();
-    function step(now){var p=Math.min((now-start)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(target*e);if(p<1)requestAnimationFrame(step);}
-    requestAnimationFrame(step);
-  });
+ var c=document.getElementById('sync-metrics');
+ if(!c)return;
+ var r1=D.keyMetrics.slice(0,3),r2=D.keyMetrics.slice(3);
+ c.innerHTML='<div class="metric-row">'+r1.map(function(m){return '<div class="metric"><div class="metric-label">'+esc(m.label)+'</div><div class="metric-value" style="color:'+m.color+';" data-target="'+m.value+'">0</div><div class="metric-change '+m.changeType+'">'+esc(m.change)+'</div></div>';}).join('')+'</div><div class="metric-row" style="margin-top:10px;">'+r2.map(function(m){return '<div class="metric"><div class="metric-label">'+esc(m.label)+'</div><div class="metric-value" style="color:'+m.color+';" data-target="'+m.value+'">0</div><div class="metric-change '+m.changeType+'">'+esc(m.change)+'</div></div>';}).join('')+'</div>';
+ // Counter animation
+ document.querySelectorAll('.metric-value[data-target]').forEach(function(el){
+ var target=parseInt(el.dataset.target),dur=1200,start=performance.now();
+ function step(now){var p=Math.min((now-start)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(target*e);if(p<1)requestAnimationFrame(step);}
+ requestAnimationFrame(step);
+ });
 })();
 
 // API Chart
 (function(){
-  var svg=document.getElementById('sync-api-chart');
-  if(!svg||!D.apiChart.pts)return;
-  var pts=D.apiChart.pts,max=Math.max.apply(null,pts),w=400,h=60,step=w/(pts.length-1);
-  var coords=pts.map(function(v,i){return [i*step, h-(v/max)*(h-10)-2];});
-  var lineD=coords.map(function(c,i){return (i===0?'M':'L')+c[0]+','+c[1];}).join(' ');
-  var areaD=lineD+' L'+coords[coords.length-1][0]+','+h+' L0,'+h+' Z';
-  var last=coords[coords.length-1];
-  var days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-  var dl=days.map(function(d,i){var x=Math.round(i*w/(days.length-1));return '<text x="'+x+'" y="58" fill="#475569" font-size="7" font-family="JetBrains Mono">'+d+'</text>';}).join('');
-  svg.innerHTML='<defs><linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#60a5fa" stop-opacity="0.4"/><stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/></linearGradient></defs><line x1="0" y1="15" x2="400" y2="15" stroke="rgba(255,255,255,0.04)"/><line x1="0" y1="30" x2="400" y2="30" stroke="rgba(255,255,255,0.04)"/><line x1="0" y1="45" x2="400" y2="45" stroke="rgba(255,255,255,0.04)"/><path class="chart-area" d="'+areaD+'" fill="url(#chartGradient)"/><path class="chart-line" stroke="#60a5fa" fill="none" stroke-width="2" d="'+lineD+'"/><circle class="chart-dot" cx="'+last[0]+'" cy="'+last[1]+'" r="3" fill="#60a5fa"/>'+dl;
-  var pk=document.getElementById('sync-api-peak'),tr=document.getElementById('sync-api-trend');
-  if(pk)pk.textContent='Peak: '+D.apiChart.peak;
-  if(tr){tr.textContent=D.apiChart.trend;tr.style.color=D.apiChart.trendType==='up'?'var(--accent-green)':'var(--accent-red)';}
+ var svg=document.getElementById('sync-api-chart');
+ if(!svg||!D.apiChart.pts)return;
+ var pts=D.apiChart.pts,max=Math.max.apply(null,pts),w=400,h=60,step=w/(pts.length-1);
+ var coords=pts.map(function(v,i){return [i*step, h-(v/max)*(h-10)-2];});
+ var lineD=coords.map(function(c,i){return (i===0?'M':'L')+c[0]+','+c[1];}).join(' ');
+ var areaD=lineD+' L'+coords[coords.length-1][0]+','+h+' L0,'+h+' Z';
+ var last=coords[coords.length-1];
+ var days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+ var dl=days.map(function(d,i){var x=Math.round(i*w/(days.length-1));return '<text x="'+x+'" y="58" fill="#475569" font-size="7" font-family="JetBrains Mono">'+d+'</text>';}).join('');
+ svg.innerHTML='<defs><linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#60a5fa" stop-opacity="0.4"/><stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/></linearGradient></defs><line x1="0" y1="15" x2="400" y2="15" stroke="rgba(255,255,255,0.04)"/><line x1="0" y1="30" x2="400" y2="30" stroke="rgba(255,255,255,0.04)"/><line x1="0" y1="45" x2="400" y2="45" stroke="rgba(255,255,255,0.04)"/><path class="chart-area" d="'+areaD+'" fill="url(#chartGradient)"/><path class="chart-line" stroke="#60a5fa" fill="none" stroke-width="2" d="'+lineD+'"/><circle class="chart-dot" cx="'+last[0]+'" cy="'+last[1]+'" r="3" fill="#60a5fa"/>'+dl;
+ var pk=document.getElementById('sync-api-peak'),tr=document.getElementById('sync-api-trend');
+ if(pk)pk.textContent='Peak: '+D.apiChart.peak;
+ if(tr){tr.textContent=D.apiChart.trend;tr.style.color=D.apiChart.trendType==='up'?'var(--accent-green)':'var(--accent-red)';}
 })();
 
 // Codebase
 (function(){
-  var b=document.getElementById('sync-codebase-bars'),s=document.getElementById('sync-codebase-stats');
-  if(!b)return;
-  b.innerHTML=D.codebase.map(function(l){return '<div class="lang-bar"><div class="lang-bar-label" style="color:'+l.lc+';">'+esc(l.name)+'</div><div class="lang-bar-track"><div class="lang-bar-fill" style="width:'+l.pct+'%;background:'+l.grad+';"></div></div><div class="lang-bar-pct">'+l.pct+'%</div></div>';}).join('');
-  if(s&&D.codeStats)s.innerHTML='<span>\ud83d\udcc1 <strong style="color:var(--text);">'+D.codeStats.files+'</strong> files</span><span>\ud83d\udcdd <strong style="color:var(--text);">'+D.codeStats.lines+'</strong> lines</span><span>\ud83d\udd04 <strong style="color:var(--text);">'+D.codeStats.commits+'</strong> commits</span>';
+ var b=document.getElementById('sync-codebase-bars'),s=document.getElementById('sync-codebase-stats');
+ if(!b)return;
+ b.innerHTML=D.codebase.map(function(l){return '<div class="lang-bar"><div class="lang-bar-label" style="color:'+l.lc+';">'+esc(l.name)+'</div><div class="lang-bar-track"><div class="lang-bar-fill" style="width:'+l.pct+'%;background:'+l.grad+';"></div></div><div class="lang-bar-pct">'+l.pct+'%</div></div>';}).join('');
+ if(s&&D.codeStats)s.innerHTML='<span>\ud83d\udcc1 <strong style="color:var(--text);">'+D.codeStats.files+'</strong> files</span><span>\ud83d\udcdd <strong style="color:var(--text);">'+D.codeStats.lines+'</strong> lines</span><span>\ud83d\udd04 <strong style="color:var(--text);">'+D.codeStats.commits+'</strong> commits</span>';
 })();
 
 // Environments
 (function(){
-  var r=document.getElementById('sync-env-row'),t=document.getElementById('sync-deploy-targets');
-  if(!r)return;
-  r.innerHTML=D.envs.map(function(e){return '<div class="env-badge '+e.cls+'"><div class="env-dot"></div>'+esc(e.name)+'</div>';}).join('');
-  if(t)t.innerHTML=D.deployTargets.map(function(x){return '<span style="font-size:0.65rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,0.05);color:var(--text-mid);">'+esc(x)+'</span>';}).join('');
+ var r=document.getElementById('sync-env-row'),t=document.getElementById('sync-deploy-targets');
+ if(!r)return;
+ r.innerHTML=D.envs.map(function(e){return '<div class="env-badge '+e.cls+'"><div class="env-dot"></div>'+esc(e.name)+'</div>';}).join('');
+ if(t)t.innerHTML=D.deployTargets.map(function(x){return '<span style="font-size:0.65rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,0.05);color:var(--text-mid);">'+esc(x)+'</span>';}).join('');
 })();
 
 // AI Models
 (function(){
-  var c=document.getElementById('sync-ai-models');
-  if(!c)return;
-  c.innerHTML=D.aiModels.map(function(m){return '<div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;background:rgba(0,0,0,0.15);"><div style="width:8px;height:8px;border-radius:50%;background:'+m.dc+';'+(m.anim?'animation:blink 2s infinite;animation-delay:'+m.del+';':'')+'"></div><div style="flex:1;"><div style="font-size:0.75rem;font-weight:600;">'+esc(m.name)+'</div><div style="font-size:0.62rem;color:var(--text-dim);">'+esc(m.detail)+'</div></div><div style="font-size:0.65rem;color:'+m.sc+';font-weight:600;">'+esc(m.status)+'</div></div>';}).join('');
+ var c=document.getElementById('sync-ai-models');
+ if(!c)return;
+ c.innerHTML=D.aiModels.map(function(m){return '<div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;background:rgba(0,0,0,0.15);"><div style="width:8px;height:8px;border-radius:50%;background:'+m.dc+';'+(m.anim?'animation:blink 2s infinite;animation-delay:'+m.del+';':'')+'"></div><div style="flex:1;"><div style="font-size:0.75rem;font-weight:600;">'+esc(m.name)+'</div><div style="font-size:0.62rem;color:var(--text-dim);">'+esc(m.detail)+'</div></div><div style="font-size:0.65rem;color:'+m.sc+';font-weight:600;">'+esc(m.status)+'</div></div>';}).join('');
 })();
 
 // Deployments
 (function(){
-  var tl=document.getElementById('sync-deployments');
-  if(!tl)return;
-  tl.innerHTML=D.deploys.map(function(d){return '<div class="timeline-item '+d.type+'"><div class="timeline-time">'+esc(d.time)+'</div><div class="timeline-body"><div class="timeline-msg">'+d.msg+'</div><div class="timeline-detail">'+esc(d.detail)+'</div></div></div>';}).join('');
+ var tl=document.getElementById('sync-deployments');
+ if(!tl)return;
+ tl.innerHTML=D.deploys.map(function(d){return '<div class="timeline-item '+d.type+'"><div class="timeline-time">'+esc(d.time)+'</div><div class="timeline-body"><div class="timeline-msg">'+d.msg+'</div><div class="timeline-detail">'+esc(d.detail)+'</div></div></div>';}).join('');
 })();
 
 // Activity
 (function(){
-  var l=document.getElementById('sync-activity');
-  if(!l)return;
-  l.innerHTML=D.activity.map(function(a){return '<div class="activity-item"><div class="activity-icon" style="background:'+a.bg+';color:'+a.ic+';">'+a.icon+'</div><div class="activity-text"><strong>'+esc(a.svc)+'</strong> \u2014 '+esc(a.txt)+'</div><div class="activity-time">'+esc(a.t)+'</div></div>';}).join('');
+ var l=document.getElementById('sync-activity');
+ if(!l)return;
+ l.innerHTML=D.activity.map(function(a){return '<div class="activity-item"><div class="activity-icon" style="background:'+a.bg+';color:'+a.ic+';">'+a.icon+'</div><div class="activity-text"><strong>'+esc(a.svc)+'</strong> \u2014 '+esc(a.txt)+'</div><div class="activity-time">'+esc(a.t)+'</div></div>';}).join('');
 })();
 
 // Status dot flicker
 setInterval(function(){
-  document.querySelectorAll('.status-dot.online').forEach(function(dot){
-    if(Math.random()>0.95){dot.style.background='var(--accent-yellow)';setTimeout(function(){dot.style.background='var(--accent-green)';},2000);}
-  });
+ document.querySelectorAll('.status-dot.online').forEach(function(dot){
+ if(Math.random()>0.95){dot.style.background='var(--accent-yellow)';setTimeout(function(){dot.style.background='var(--accent-green)';},2000);}
+ });
 },5000);
 
 // Sync indicator
 (function(){
-  var ind=document.getElementById('sync-indicator');
-  if(!ind)return;
-  var dot=ind.querySelector('.sync-dot'),label=ind.querySelector('.sync-label');
-  if(dot)dot.style.background='var(--accent-cyan)';
-  if(label)label.textContent='Local data \u00b7 Embedded';
+ var ind=document.getElementById('sync-indicator');
+ if(!ind)return;
+ var dot=ind.querySelector('.sync-dot'),label=ind.querySelector('.sync-label');
+ if(dot)dot.style.background='var(--accent-cyan)';
+ if(label)label.textContent='Local data \u00b7 Embedded';
 })();
 
 // Tab Switching
 function switchTab(tabName, btn) {
-  document.querySelectorAll('.tab-page').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-  document.getElementById('page-' + tabName).classList.add('active');
-  btn.classList.add('active');
+ document.querySelectorAll('.tab-page').forEach(el => el.classList.remove('active'));
+ document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+ document.getElementById('page-' + tabName).classList.add('active');
+ btn.classList.add('active');
 }
 
 // Live Clock
 function updateClock() {
-  const now = new Date();
-  const h = String(now.getHours()).padStart(2, '0');
-  const m = String(now.getMinutes()).padStart(2, '0');
-  const s = String(now.getSeconds()).padStart(2, '0');
-  document.getElementById('clock').textContent = h + ':' + m + ':' + s + ' UTC';
+ const now = new Date();
+ const h = String(now.getHours()).padStart(2, '0');
+ const m = String(now.getMinutes()).padStart(2, '0');
+ const s = String(now.getSeconds()).padStart(2, '0');
+ document.getElementById('clock').textContent = h + ':' + m + ':' + s + ' UTC';
 }
 setInterval(updateClock, 1000);
 updateClock();
@@ -1601,12 +1601,12 @@ console.log('[dashboard] All sections rendered with embedded data');
 </script>
 
 <div style="text-align:center;padding:20px;color:#475569;font-size:0.7rem;">
-  <div style="margin-bottom:6px;">
-    <a href="https://github.com/vcr50/salesforce-ops-monitoring-platform" target="_blank" style="color:#60a5fa;text-decoration:none;font-weight:600;">
-      🔗 github.com/vcr50/salesforce-ops-monitoring-platform
-    </a>
-  </div>
-  TomCodeX Inc · Developer Dashboard · Real-time system monitoring
+ <div style="margin-bottom:6px;">
+ <a href="https://github.com/vcr50/salesforce-ops-monitoring-platform" target="_blank" style="color:#60a5fa;text-decoration:none;font-weight:600;">
+ github.com/vcr50/salesforce-ops-monitoring-platform
+ </a>
+ </div>
+ TomCodeX Inc · Developer Dashboard · Real-time system monitoring
 </div>
 
 </body>

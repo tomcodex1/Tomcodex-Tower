@@ -98,7 +98,7 @@ app.post("/api/push", requireToken, (req, res) => {
     // Write to live data file
     fs.writeFileSync(LIVE_DATA_FILE, JSON.stringify(data, null, 2), "utf-8");
 
-    console.log(`[push] ✅ Data updated at ${new Date().toLocaleTimeString()} (push #${data._push.pushCount})`);
+    console.log(`[push] Data updated at ${new Date().toLocaleTimeString()} (push #${data._push.pushCount})`);
 
     res.json({
       success: true,
@@ -140,7 +140,7 @@ app.post("/api/reset", requireToken, (req, res) => {
   try {
     if (fs.existsSync(LIVE_DATA_FILE)) {
       fs.unlinkSync(LIVE_DATA_FILE);
-      console.log("[reset] 🔄 Live data cleared, reverting to static");
+      console.log("[reset] Live data cleared, reverting to static");
     }
     res.json({ success: true, message: "Live data cleared" });
   } catch (err) {
@@ -165,14 +165,14 @@ app.listen(PORT, () => {
   console.log("  ╔══════════════════════════════════════════════════╗");
   console.log("  ║        TomCodeX Dashboard — Sync Server         ║");
   console.log("  ╠══════════════════════════════════════════════════╣");
-  console.log(`  ║  🌐 Dashboard:  http://localhost:${PORT}            ║`);
-  console.log(`  ║  📊 API:        http://localhost:${PORT}/api/data   ║`);
-  console.log(`  ║  📡 Push:       POST /api/push                  ║`);
+  console.log(`  ║  Dashboard:  http://localhost:${PORT}            ║`);
+  console.log(`  ║  API:        http://localhost:${PORT}/api/data   ║`);
+  console.log(`  ║  Push:       POST /api/push                  ║`);
   console.log("  ╠══════════════════════════════════════════════════╣");
-  console.log(`  ║  🔑 Sync Token: ${SYNC_TOKEN}      ║`);
+  console.log(`  ║  Sync Token: ${SYNC_TOKEN}      ║`);
   console.log("  ╚══════════════════════════════════════════════════╝");
   console.log("");
-  console.log("  ⚡ Use this token in your local push script:");
+  console.log("  Use this token in your local push script:");
   console.log(`     X-Sync-Token: ${SYNC_TOKEN}`);
   console.log("");
 });

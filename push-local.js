@@ -27,14 +27,14 @@ const isWatch = process.argv.includes("--watch");
 async function pushData() {
   try {
     if (!fs.existsSync(DATA_FILE)) {
-      console.error("[push] ❌ Data file not found:", DATA_FILE);
+      console.error("[push] Data file not found:", DATA_FILE);
       return false;
     }
 
     const raw = fs.readFileSync(DATA_FILE, "utf-8");
     const data = JSON.parse(raw);
 
-    console.log(`[push] 📤 Pushing data to ${SERVER_URL}/api/push ...`);
+    console.log(`[push] Pushing data to ${SERVER_URL}/api/push ...`);
 
     const res = await fetch(`${SERVER_URL}/api/push`, {
       method: "POST",
@@ -47,15 +47,15 @@ async function pushData() {
 
     if (!res.ok) {
       const err = await res.text();
-      console.error(`[push] ❌ Server responded ${res.status}: ${err}`);
+      console.error(`[push] Server responded ${res.status}: ${err}`);
       return false;
     }
 
     const result = await res.json();
-    console.log(`[push] ✅ Success! Push #${result.pushCount} at ${result.receivedAt}`);
+    console.log(`[push] Success! Push #${result.pushCount} at ${result.receivedAt}`);
     return true;
   } catch (err) {
-    console.error("[push] ❌ Error:", err.message);
+    console.error("[push] Error:", err.message);
     return false;
   }
 }
@@ -98,7 +98,7 @@ async function main() {
       lastMtime = fs.statSync(DATA_FILE).mtimeMs;
     } catch {}
 
-    console.log(`[watch] 👀 Watching for changes (every ${WATCH_INTERVAL / 1000}s)...
+    console.log(`[watch] Watching for changes (every ${WATCH_INTERVAL / 1000}s)...
 `);
     setInterval(watchLoop, WATCH_INTERVAL);
   } else {
